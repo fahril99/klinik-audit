@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit Website – Klinik Cantik A | FAZMEN</title>
+  <meta name="description" content="Video audit website profesional untuk klinik kecantikan Anda. Lihat bagaimana website dapat meningkatkan kepercayaan calon pasien dan mempermudah proses booking.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header id="header" class="header">
+    <div class="header-inner">
+      <a href="#" class="logo" aria-label="FAZMEN Home">
+        <div class="logo-icon" aria-hidden="true">F</div>
+        <span class="logo-text">FAZMEN</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main id="main-content">
+
+    <!-- Title Section -->
+    <section class="title-section fade-in" id="title-section">
+      <h1 class="page-title">Audit Website – <span id="clinic-name">Klinik Cantik A</span></h1>
+      <p class="audit-date">
+        <svg class="date-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span id="audit-date">22 Juni 2026</span>
+      </p>
+    </section>
+
+    <!-- Content Grid -->
+    <div class="content-grid">
+
+      <!-- ===== LEFT COLUMN ===== -->
+      <div class="main-column">
+
+        <!-- Video Player -->
+        <div class="video-container fade-in" id="video-container">
+          <div class="video-wrapper" id="video-wrapper">
+            <!-- Skeleton Loader -->
+            <div class="video-skeleton" id="video-skeleton">
+              <div class="skeleton-shimmer"></div>
+              <div class="skeleton-play-btn">
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+            </div>
+
+            <video id="video-player" preload="metadata" playsinline>
+              <source src="videos/personal.mp4" type="video/mp4">
+              Browser Anda tidak mendukung video tag.
+            </video>
+
+            <!-- Video Overlay (Click to play) -->
+            <div class="video-overlay" id="video-overlay">
+              <button class="big-play-btn" id="big-play-btn" aria-label="Putar Video">
+                <svg viewBox="0 0 24 24" width="32" height="32" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+              </button>
+            </div>
+
+            <!-- Custom Controls -->
+            <div class="video-controls" id="video-controls">
+              <div class="seek-bar-container" id="seek-bar-container">
+                <div class="seek-bar-track" id="seek-bar-track">
+                  <div class="seek-bar-buffered" id="seek-bar-buffered"></div>
+                  <div class="seek-bar-filled" id="seek-bar-filled"></div>
+                  <div class="seek-bar-handle" id="seek-bar-handle"></div>
+                </div>
+              </div>
+              <div class="controls-row">
+                <div class="controls-left">
+                  <button class="ctrl-btn" id="ctrl-play" aria-label="Play / Pause">
+                    <svg class="icon-play" viewBox="0 0 24 24" width="20" height="20" fill="white"><polygon points="6,3 20,12 6,21"/></svg>
+                    <svg class="icon-pause" viewBox="0 0 24 24" width="20" height="20" fill="white" style="display:none"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>
+                  </button>
+                  <button class="ctrl-btn" id="ctrl-rewind" aria-label="Mundur 10 detik">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M11.99 5V1l-5 5 5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6h-2c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/><text x="10" y="16" font-size="7" fill="white" text-anchor="middle" font-weight="700">10</text></svg>
+                  </button>
+                  <span class="time-display" id="time-display">0:00 / 0:00</span>
+                </div>
+                <div class="controls-right">
+                  <button class="ctrl-btn ctrl-speed" id="ctrl-speed" aria-label="Kecepatan Putar">1x</button>
+                  <button class="ctrl-btn" id="ctrl-pip" aria-label="Picture in Picture">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M19 11h-8v6h8v-6zm4 8V4.98C23 3.88 22.1 3 21 3H3c-1.1 0-2 .88-2 1.98V19c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2zm-2 .02H3V4.97h18v14.05z"/></svg>
+                  </button>
+                  <button class="ctrl-btn" id="ctrl-fullscreen" aria-label="Layar Penuh">
+                    <svg class="icon-expand" viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                    <svg class="icon-compress" viewBox="0 0 24 24" width="18" height="18" fill="white" style="display:none"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Summary Section (Below Video) -->
+        <section class="video-summary-section scroll-reveal" id="video-summary-section">
+          <div class="summary-card">
+            <h2 class="section-heading">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Ringkasan Video
+            </h2>
+            <div class="summary-text">
+              <p>Dalam video ini saya memperlihatkan bagaimana calon pasien menemukan klinik melalui pencarian online, melihat informasi treatment, dan melakukan booking secara langsung melalui WhatsApp.</p>
+              <p>Website dirancang untuk meningkatkan kredibilitas klinik, memberikan pengalaman yang lebih baik kepada calon pasien, dan menjadi pusat informasi digital yang dapat diakses kapan saja.</p>
+              <p>Saya juga menjelaskan pilihan paket website yang tersedia serta bagaimana website dapat menjadi aset digital jangka panjang untuk klinik Anda.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section scroll-reveal" id="pricing-section">
+          <h2 class="section-heading-center">Pilihan Paket Website</h2>
+          <div class="pricing-grid">
+
+            <!-- Starter -->
+            <div class="pricing-card" id="pricing-starter">
+              <div class="pricing-card-header">
+                <h3 class="plan-name">Starter</h3>
+                <p class="plan-desc">Cocok untuk klinik yang baru mulai membangun kehadiran online.</p>
+              </div>
+              <div class="plan-price">
+                <span class="currency">Rp</span>
+                <span class="amount">1.500.000</span>
+              </div>
+              <ul class="plan-features">
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>4 Halaman</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Booking via WhatsApp</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Mobile Friendly</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Form Konsultasi</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Integrasi Google Maps</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic SEO</li>
+              </ul>
+              <a href="#cta-section" class="plan-cta-link">Lihat Detail →</a>
+            </div>
+
+            <!-- Growth -->
+            <div class="pricing-card pricing-card--popular" id="pricing-growth">
+              <div class="popular-badge">Populer</div>
+              <div class="pricing-card-header">
+                <h3 class="plan-name">Growth</h3>
+                <p class="plan-desc">Meningkatkan kepercayaan calon pasien.</p>
+              </div>
+              <div class="plan-price">
+                <span class="currency">Rp</span>
+                <span class="amount">2.500.000</span>
+              </div>
+              <ul class="plan-features">
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>6 Halaman</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Semua fitur Starter</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Halaman Treatment Lengkap</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Testimoni Pasien</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Galeri Before After</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>FAQ</li>
+              </ul>
+              <a href="#cta-section" class="plan-cta-link">Lihat Detail →</a>
+            </div>
+
+            <!-- Premium -->
+            <div class="pricing-card" id="pricing-premium">
+              <div class="pricing-card-header">
+                <h3 class="plan-name">Premium</h3>
+                <p class="plan-desc">Untuk klinik yang serius membangun aset digital.</p>
+              </div>
+              <div class="plan-price">
+                <span class="currency">Rp</span>
+                <span class="amount">5.000.000</span>
+              </div>
+              <ul class="plan-features">
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>10 Halaman</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Semua fitur Growth</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Landing Page Promo</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Blog Artikel</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Integrasi Meta Pixel & Analytics</li>
+                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tracking Konversi</li>
+              </ul>
+              <a href="#cta-section" class="plan-cta-link">Lihat Detail →</a>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section scroll-reveal" id="cta-section">
+          <div class="cta-card">
+            <div class="cta-content">
+              <h2 class="cta-title">Tertarik Membuat Website Profesional untuk Klinik Anda?</h2>
+              <p class="cta-subtitle">Klik tombol di samping untuk menghubungi kami via WhatsApp.</p>
+            </div>
+            <a href="https://wa.me/628xxxxxxxxxx?text=Halo%2C%20saya%20tertarik%20membuat%20website%20untuk%20klinik%20saya." class="cta-btn" id="cta-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Chat WhatsApp Sekarang
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- ===== SIDEBAR ===== -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+
+          <!-- Tabs -->
+          <div class="sidebar-tabs" role="tablist">
+            <button class="tab-btn active" id="tab-btn-ringkasan" role="tab" aria-selected="true" aria-controls="tab-ringkasan" data-tab="ringkasan">Ringkasan</button>
+            <button class="tab-btn" id="tab-btn-transcript" role="tab" aria-selected="false" aria-controls="tab-transcript" data-tab="transcript">Transcript</button>
+          </div>
+
+          <!-- Tab Content -->
+          <div class="sidebar-body">
+
+            <!-- Ringkasan Tab -->
+            <div class="tab-content active" id="tab-ringkasan" role="tabpanel" aria-labelledby="tab-btn-ringkasan">
+              <div class="ringkasan-content">
+                <p>Dalam video ini saya menunjukkan bagaimana website profesional dapat membantu klinik kecantikan membangun kepercayaan calon pasien dan mempermudah proses booking.</p>
+                <p>Website dirancang agar informasi treatment lebih mudah ditemukan, tampilan nyaman di perangkat mobile, dan calon pasien dapat langsung menghubungi klinik melalui WhatsApp.</p>
+                <p>Saya juga menjelaskan pilihan paket website yang tersedia serta bagaimana website dapat menjadi aset digital jangka panjang untuk klinik.</p>
+              </div>
+            </div>
+
+            <!-- Transcript Tab -->
+            <div class="tab-content" id="tab-transcript" role="tabpanel" aria-labelledby="tab-btn-transcript">
+              <div class="transcript-list" id="transcript-list">
+                <!-- Skeleton for transcript -->
+                <div class="transcript-skeleton" id="transcript-skeleton">
+                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+                </div>
+                <!-- Transcript entries loaded via JS -->
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar Footer / Progress -->
+          <div class="sidebar-footer">
+            <div class="progress-row">
+              <span class="progress-label">Progress Menonton</span>
+              <span class="progress-value" id="progress-percent">0%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="watch-progress-fill"></div>
+            </div>
+            <p class="duration-label">Durasi Video <span id="total-duration">0:00</span></p>
+          </div>
+
+        </div>
+      </aside>
+
+    </div><!-- /.content-grid -->
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer" class="footer">
+    <p>Made with <span class="heart">❤️</span> by Fahril Creative</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
