@@ -111,8 +111,18 @@
 
   function applyConfig() {
     if (DOM.clinicName) DOM.clinicName.textContent = CONFIG.clinicName;
-    if (DOM.auditDate) DOM.auditDate.textContent = CONFIG.auditDate;
-    document.title = `Audit Website – ${CONFIG.clinicName} | FAZMEN`;
+    // Auto-generate current date in Indonesian format
+    if (DOM.auditDate) DOM.auditDate.textContent = getIndonesianDate();
+    document.title = `Audit Website – ${CONFIG.clinicName} | Fahril Creative - Fazmen`;
+  }
+
+  function getIndonesianDate() {
+    const months = [
+      'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+      'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+    ];
+    const now = new Date();
+    return `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
   }
 
   /* ====================
@@ -276,21 +286,36 @@
 
   function onVideoEnded() {
     if (state.currentVideo === 'personal' && !state.personalEnded) {
-      // Switch to main video
+      // Smooth transition: personal → main video
       state.personalEnded = true;
       state.currentVideo = 'main';
       const video = DOM.videoPlayer;
-      const wasPlaying = !video.paused;
 
-      video.src = CONFIG.videos.main;
-      video.load();
+      // Step 1: Fade out
+      video.classList.add('video-fading');
 
-      video.addEventListener('loadeddata', function onLoaded() {
-        video.removeEventListener('loadeddata', onLoaded);
-        if (wasPlaying) {
-          video.play().catch(() => {});
-        }
-      });
+      setTimeout(() => {
+        // Step 2: Switch source
+        video.src = CONFIG.videos.main;
+        video.load();
+
+        video.addEventListener('canplay', function onCanPlay() {
+          video.removeEventListener('canplay', onCanPlay);
+
+          // Step 3: Fade in + autoplay (always, user already interacted)
+          video.classList.remove('video-fading');
+          video.classList.add('video-fading-in');
+          video.play().catch(() => {
+            // Fallback: show overlay if autoplay blocked
+            DOM.videoOverlay.classList.remove('hidden');
+          });
+
+          // Clean up fade-in class after transition
+          setTimeout(() => {
+            video.classList.remove('video-fading-in');
+          }, 400);
+        });
+      }, 350); // Wait for fade-out to complete
     }
   }
 
