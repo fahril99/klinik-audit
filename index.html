@@ -1,295 +1,2437 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audit Website – Klinik Cantik A | FAZMEN</title>
-  <meta name="description" content="Video audit website profesional untuk klinik kecantikan Anda. Lihat bagaimana website dapat meningkatkan kepercayaan calon pasien dan mempermudah proses booking.">
-  <meta name="robots" content="index, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Video audit website profesional untuk klinik kecantikan Anda. Bantu klinik kecantikan Anda tampil di Google, pamerkan daftar perawatan, dan dapatkan booking pasien otomatis via WhatsApp." />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- ===== OPEN GRAPH / SOCIAL MEDIA SHARING ===== -->
+  <meta property="og:title" content="Audit Website Profesional untuk Klinik Kecantikan | FAZMEN" />
+  <meta property="og:description" content="Bantu klinik kecantikan Anda tampil di Google, pamerkan daftar perawatan, dan dapatkan booking pasien otomatis via WhatsApp." />
+  <meta property="og:image" content="https://fazmen.my.id/klinik-audit/thumbnail/thumbnail.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fazmen.my.id/klinik-audit" />
+  <meta property="og:site_name" content="FAZMEN - Audit Platform" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Audit Website Profesional untuk Klinik Kecantikan | FAZMEN" />
+  <meta name="twitter:description" content="Bantu klinik kecantikan Anda tampil di Google, pamerkan daftar perawatan, dan dapatkan booking pasien otomatis via WhatsApp." />
+  <meta name="twitter:image" content="https://fazmen.my.id/klinik-audit/thumbnail/thumbnail.jpg" />
+
+  <!-- WhatsApp / Telegram / Facebook -->
+  <meta property="og:image:alt" content="Audit Website Klinik Cantik A - FAZMEN" />
+  
+  <!-- Additional SEO -->
+  <link rel="canonical" href="https://fazmen.my.id/klinik-audit" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       FAZMEN – Premium Video Audit • Redesigned
+       ============================================================ */
+
+    /* ---------- Tokens ---------- */
+    :root {
+      /* Brand greens */
+      --g50:  #f0fdf4; --g100: #dcfce7; --g200: #bbf7d0;
+      --g300: #86efac; --g400: #4ade80; --g500: #22c55e;
+      --g600: #16a34a; --g700: #15803d; --g800: #166534;
+
+      /* Neutrals */
+      --w:    #ffffff;
+      --n50:  #f8fafc; --n100: #f1f5f9; --n200: #e2e8f0;
+      --n300: #cbd5e1; --n400: #94a3b8; --n500: #64748b;
+      --n600: #475569; --n700: #334155; --n800: #1e293b;
+      --n900: #0f172a;
+
+      /* Accent — electric teal for glow effects */
+      --acc: #00e5a0;
+
+      /* Type */
+      --font-display: 'Syne', 'Inter', sans-serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+
+      /* Scale */
+      --text-xs:  0.6875rem;
+      --text-sm:  0.8125rem;
+      --text-md:  0.9375rem;
+      --text-lg:  1.0625rem;
+      --text-xl:  1.25rem;
+      --text-2xl: 1.5625rem;
+      --text-3xl: 2rem;
+
+      /* Layout */
+      --max-w:     1300px;
+      --gutter:    clamp(16px, 4vw, 32px);
+      --r-sm:  8px; --r-md: 14px; --r-lg: 20px; --r-xl: 28px;
+      --header-h: 64px;
+
+      /* Shadows */
+      --sh-xs:    0 1px 3px rgba(0,0,0,.04);
+      --sh-sm:    0 4px 12px rgba(0,0,0,.06);
+      --sh-md:    0 8px 28px rgba(0,0,0,.08);
+      --sh-lg:    0 20px 56px rgba(0,0,0,.10);
+      --sh-xl:    0 32px 80px rgba(0,0,0,.12);
+      --sh-green: 0 8px 40px rgba(34,197,94,.22);
+      --sh-green-lg: 0 20px 64px rgba(34,197,94,.28);
+
+      /* Easing */
+      --ease:   cubic-bezier(.16,1,.3,1);
+      --fast:   140ms var(--ease);
+      --normal: 280ms var(--ease);
+      --slow:   480ms var(--ease);
+    }
+
+    /* ---------- Reset ---------- */
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-md);
+      line-height: 1.65;
+      color: var(--n800);
+      background: var(--n50);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color:inherit; text-decoration:none; }
+    button { border:none; background:none; cursor:pointer; font-family:inherit; font-size:inherit; color:inherit; outline:none; }
+    button:focus-visible, a:focus-visible { outline:2px solid var(--g500); outline-offset:2px; border-radius:4px; }
+    ul, ol { list-style:none; }
+    img, video { display:block; max-width:100%; }
+
+    /* ---------- Particles canvas ---------- */
+    #particles-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .45;
+    }
+
+    /* ---------- Keyframes ---------- */
+    @keyframes fadeInUp  { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeIn    { from{opacity:0} to{opacity:1} }
+    @keyframes shimmer   { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+    @keyframes progressGrow { from{width:0%} }
+    @keyframes ctaPulse  { 0%,100%{box-shadow:0 8px 40px rgba(34,197,94,.22)} 50%{box-shadow:0 8px 56px rgba(34,197,94,.38)} }
+    @keyframes float     { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+    @keyframes logoFlash { 0%,100%{opacity:1} 50%{opacity:.7} }
+    @keyframes boltPulse { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.4)} }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    .fade-in { animation: fadeInUp .55s var(--ease) both; }
+    .scroll-reveal { opacity:0; transform:translateY(28px); transition:opacity .65s var(--ease), transform .65s var(--ease); }
+    .scroll-reveal.visible { opacity:1; transform:translateY(0); }
+    .video-fading    { opacity:0!important; transition:opacity .3s ease!important; }
+    .video-fading-in { opacity:1!important; transition:opacity .38s ease!important; }
+
+    /* ============================================================
+       HEADER
+    ============================================================ */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(226,232,240,.7);
+      box-shadow: 0 1px 0 rgba(226,232,240,.5);
+    }
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    /* --- Premium Logo --- */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      transition: opacity var(--fast);
+    }
+    .logo:hover { opacity:.82; }
+
+    /* Lightning-F mark */
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .logo-mark svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 1px;
+    }
+    .logo-brand {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--n900);
+      letter-spacing: -.02em;
+    }
+    .logo-sub {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--n400);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       TITLE SECTION
+    ============================================================ */
+    .title-section {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 36px var(--gutter) 10px;
+    }
+    .page-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--g600);
+      background: var(--g50);
+      border: 1px solid var(--g200);
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .page-eyebrow svg { flex-shrink:0; }
+    .page-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 4vw, 2.2rem);
+      font-weight: 800;
+      color: var(--n900);
+      letter-spacing: -.03em;
+      line-height: 1.18;
+    }
+    .page-title .clinic-accent {
+      background: linear-gradient(135deg, var(--g600) 0%, var(--g500) 60%, var(--acc) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .audit-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      color: var(--n500);
+      background: var(--w);
+      border: 1px solid var(--n200);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .meta-pill svg { color: var(--n400); flex-shrink:0; }
+
+    /* ============================================================
+       CONTENT STACK (single-column on all breakpoints)
+    ============================================================ */
+    .content-stack {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 20px var(--gutter) 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ============================================================
+       VIDEO PLAYER
+    ============================================================ */
+    .video-container {
+      position: relative;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: #07070d;
+      box-shadow: var(--sh-xl), 0 0 0 1px rgba(255,255,255,.06) inset;
+      transition: box-shadow var(--normal);
+    }
+    .video-container:hover {
+      box-shadow: 0 36px 96px rgba(0,0,0,.16), 0 0 0 1px rgba(255,255,255,.06) inset;
+    }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #07070d;
+    }
+    
+    /* Fullscreen blur background */
+    .video-background-blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(40px) brightness(0.3);
+      transform: scale(1.2);
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .video-container.fullscreen .video-background-blur {
+      opacity: 1;
+    }
+    
+    .video-wrapper video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+      background: #000;
+      z-index: 1;
+    }
+    
+    /* Thumbnail */
+    .video-thumbnail {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 2;
+      transition: opacity 0.8s ease;
+      background: #000;
+    }
+    .video-thumbnail.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .video-skeleton {
+      position: absolute;
+      inset: 0;
+      background: #10101a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transition: opacity .4s ease;
+    }
+    .video-skeleton.hidden { opacity:0; pointer-events:none; }
+    .skeleton-shimmer {
+      position: absolute; inset:0; overflow:hidden;
+    }
+    .skeleton-shimmer::after {
+      content:'';
+      position:absolute; inset:0;
+      background: linear-gradient(90deg,transparent 0%,rgba(255,255,255,.04) 50%,transparent 100%);
+      animation: shimmer 2s infinite;
+    }
+    .skeleton-play-btn {
+      width:72px; height:72px;
+      border-radius:50%;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.07);
+      display:flex; align-items:center; justify-content:center;
+      z-index:1;
+    }
+    .skeleton-play-btn svg { margin-left:3px; opacity:.28; }
+
+    .video-overlay {
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(0,0,0,.18);
+      z-index:6; cursor:pointer;
+      transition:opacity var(--normal);
+    }
+    .video-overlay.hidden { opacity:0; pointer-events:none; }
+
+    .big-play-btn {
+      width:68px; height:68px;
+      border-radius:50%;
+      background:rgba(34,197,94,.9);
+      backdrop-filter:blur(4px);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 8px 36px rgba(34,197,94,.38), 0 0 0 8px rgba(34,197,94,.12);
+      transition:transform var(--normal), box-shadow var(--normal);
+    }
+    .big-play-btn:hover {
+      transform:scale(1.09);
+      box-shadow:0 12px 44px rgba(34,197,94,.48), 0 0 0 12px rgba(34,197,94,.1);
+    }
+    .big-play-btn svg { margin-left:4px; }
+
+    /* Buffering animation */
+    .buffering-overlay {
+      position: absolute;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 7;
+      background: rgba(0,0,0,0.3);
+      pointer-events: none;
+    }
+    .buffering-overlay.active {
+      display: flex;
+    }
+    .buffering-spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid rgba(255,255,255,0.15);
+      border-top: 4px solid var(--g500);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    .video-controls {
+      position:absolute;
+      bottom:0; left:0; right:0;
+      background:linear-gradient(transparent,rgba(0,0,0,.78) 45%);
+      padding:32px 14px 10px;
+      z-index:10;
+      opacity:0;
+      transition:opacity var(--normal);
+    }
+    .video-wrapper:hover .video-controls,
+    .video-controls.show { opacity:1; }
+
+    /* Mobile controls hide/show */
+    .video-controls.mobile-hidden {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transition: opacity 0.3s ease;
+    }
+    .video-overlay.mobile-hidden {
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .seek-bar-container {
+      padding:5px 0 9px;
+      cursor:pointer;
+    }
+    .seek-bar-track {
+      position:relative; height:4px;
+      background:rgba(255,255,255,.16);
+      border-radius:4px;
+      overflow:visible;
+      transition:height var(--fast);
+    }
+    .seek-bar-container:hover .seek-bar-track { height:6px; }
+    .seek-bar-buffered {
+      position:absolute; top:0; left:0; height:100%;
+      background:rgba(255,255,255,.14);
+      border-radius:4px; width:0%;
+      transition:width .3s;
+    }
+    .seek-bar-filled {
+      position:absolute; top:0; left:0; height:100%;
+      background:linear-gradient(90deg,var(--g500),var(--acc));
+      border-radius:4px; width:0%;
+      box-shadow:0 0 10px rgba(34,197,94,.3);
+    }
+    .seek-bar-handle {
+      position:absolute; top:50%; left:0;
+      width:15px; height:15px;
+      border-radius:50%;
+      background:var(--w);
+      transform:translate(-50%,-50%) scale(0);
+      transition:transform var(--fast), box-shadow var(--fast);
+      box-shadow:0 2px 8px rgba(0,0,0,.28);
+    }
+    .seek-bar-container:hover .seek-bar-handle { transform:translate(-50%,-50%) scale(1); }
+
+    .controls-row {
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .controls-left, .controls-right { display:flex; align-items:center; gap:2px; }
+    .ctrl-btn {
+      width:36px; height:36px;
+      display:flex; align-items:center; justify-content:center;
+      border-radius:var(--r-sm); color:var(--w);
+      transition:background var(--fast), transform var(--fast);
+    }
+    .ctrl-btn:hover { background:rgba(255,255,255,.1); transform:scale(1.06); }
+    .ctrl-speed {
+      font-size:var(--text-xs); font-weight:700;
+      width:auto; padding:0 10px; letter-spacing:.04em;
+    }
+    .time-display {
+      font-size:var(--text-xs);
+      color:rgba(255,255,255,.82);
+      margin-left:6px;
+      font-weight:500;
+      font-variant-numeric:tabular-nums;
+      letter-spacing:.04em;
+    }
+
+    /* ============================================================
+       PANEL CARD (shared by summary/transcript/progress)
+    ============================================================ */
+    .panel-card {
+      background: var(--w);
+      border-radius: var(--r-md);
+      border: 1px solid var(--n200);
+      box-shadow: var(--sh-sm);
+      overflow: hidden;
+      transition: box-shadow var(--normal);
+    }
+    .panel-card:hover { box-shadow: var(--sh-md); }
+
+    /* ============================================================
+       SUMMARY + TRANSCRIPT TABS
+    ============================================================ */
+    .sidebar-tabs {
+      display:flex;
+      border-bottom:1px solid var(--n200);
+      padding:0 6px;
+      gap:4px;
+      background:var(--n50);
+    }
+    .tab-btn {
+      flex:1;
+      padding:13px 14px;
+      font-size:var(--text-sm);
+      font-weight:500;
+      color:var(--n500);
+      position:relative;
+      transition:color var(--normal), background var(--fast);
+      text-align:center;
+      border-radius:var(--r-sm) var(--r-sm) 0 0;
+    }
+    .tab-btn:hover { color:var(--n700); background:rgba(0,0,0,.02); }
+    .tab-btn::after {
+      content:'';
+      position:absolute; bottom:0; left:14px; right:14px;
+      height:2.5px;
+      background:var(--g500);
+      border-radius:4px 4px 0 0;
+      transform:scaleX(0);
+      transition:transform var(--normal);
+    }
+    .tab-btn.active { color:var(--g600); font-weight:700; }
+    .tab-btn.active::after { transform:scaleX(1); }
+
+    .panel-body {
+      overflow-y:auto; overflow-x:hidden;
+      max-height:300px;
+      scroll-behavior:smooth;
+    }
+    .panel-body::-webkit-scrollbar { width:4px; }
+    .panel-body::-webkit-scrollbar-track { background:transparent; }
+    .panel-body::-webkit-scrollbar-thumb { background:var(--n300); border-radius:10px; }
+    .panel-body::-webkit-scrollbar-thumb:hover { background:var(--n400); }
+
+    .tab-content { display:none; padding:18px 20px; }
+    .tab-content.active { display:block; animation:fadeIn .22s ease both; }
+
+    /* Summary list - desktop only */
+    .benefit-list { display:flex; flex-direction:column; gap:2px; }
+    .benefit-item {
+      display:flex; align-items:flex-start; gap:12px;
+      padding:9px 10px;
+      border-radius:var(--r-sm);
+      transition:background var(--fast);
+    }
+    .benefit-item:hover { background:var(--n50); }
+    .benefit-check { flex-shrink:0; margin-top:1px; }
+    .benefit-item span {
+      font-size:var(--text-sm);
+      color:var(--n700);
+      line-height:1.5;
+      font-weight:500;
+    }
+
+    /* Summary prose - mobile/tablet only */
+    .summary-prose {
+      display:none;
+      font-size:var(--text-sm);
+      color:var(--n600);
+      line-height:1.75;
+    }
+    .summary-prose p {
+      margin-bottom:12px;
+    }
+    .summary-prose p:last-child {
+      margin-bottom:0;
+    }
+
+    /* Transcript */
+    .transcript-list { display:flex; flex-direction:column; gap:2px; }
+    .transcript-skeleton { display:flex; flex-direction:column; gap:14px; }
+    .ts-item { display:flex; flex-direction:column; gap:6px; }
+    .ts-time.skeleton-box {
+      width:34px; height:13px;
+      background:var(--n200); border-radius:4px;
+      position:relative; overflow:hidden;
+    }
+    .ts-text.skeleton-box {
+      width:100%; height:34px;
+      background:var(--n100); border-radius:4px;
+      position:relative; overflow:hidden;
+    }
+    .skeleton-box::after {
+      content:'';
+      position:absolute; inset:0;
+      background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.55) 50%,transparent 100%);
+      animation:shimmer 1.7s infinite;
+    }
+    .transcript-entry {
+      padding:9px 12px;
+      border-radius:var(--r-sm);
+      cursor:pointer;
+      transition:background var(--fast), border-color var(--fast);
+      border-left:3px solid transparent;
+    }
+    .transcript-entry:hover { background:var(--n50); }
+    .transcript-entry.active {
+      background:var(--g50);
+      border-left-color:var(--g500);
+    }
+    .transcript-time {
+      font-size:var(--text-xs);
+      font-weight:700;
+      color:var(--g600);
+      margin-bottom:2px;
+      font-variant-numeric:tabular-nums;
+      letter-spacing:.04em;
+    }
+    .transcript-text {
+      font-size:var(--text-sm);
+      color:var(--n600);
+      line-height:1.5;
+    }
+    .transcript-entry.active .transcript-text {
+      color:var(--n800); font-weight:500;
+    }
+
+    /* Panel footer */
+    .panel-footer {
+      padding:16px 20px 18px;
+      border-top:1px solid var(--n200);
+      background:var(--n50);
+    }
+    .progress-row {
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:8px;
+    }
+    .progress-label {
+      font-size:var(--text-sm); font-weight:600; color:var(--n700);
+      display:flex; align-items:center; gap:7px;
+    }
+    .progress-label svg { color:var(--n400); }
+    .progress-value {
+      font-size:var(--text-sm); font-weight:700;
+      color:var(--g600);
+      background:var(--g50);
+      padding:2px 11px; border-radius:20px;
+      font-variant-numeric:tabular-nums;
+    }
+    .progress-track {
+      height:5px; background:var(--n200); border-radius:5px;
+      overflow:hidden; margin-bottom:11px;
+      box-shadow:inset 0 1px 2px rgba(0,0,0,.04);
+    }
+    .progress-fill {
+      height:100%;
+      background:linear-gradient(90deg,var(--g500),var(--acc));
+      border-radius:5px; width:0%;
+      transition:width .55s var(--ease);
+      box-shadow:0 0 10px rgba(34,197,94,.22);
+    }
+    .duration-label {
+      font-size:var(--text-xs); color:var(--n400);
+      text-align:center; font-weight:500;
+    }
+    #total-duration { font-weight:700; color:var(--n600); }
+
+    .demo-btn-wrap { margin-top:11px; padding-top:13px; border-top:1px solid var(--n200); }
+    .demo-btn {
+      display:flex; align-items:center; justify-content:center;
+      gap:9px; width:100%;
+      padding:10px 16px;
+      background:var(--w);
+      border:1px solid var(--n200);
+      border-radius:var(--r-sm);
+      font-weight:600;
+      font-size:var(--text-sm);
+      color:var(--n700);
+      transition:all var(--fast);
+      text-decoration:none;
+    }
+    .demo-btn:hover {
+      border-color:var(--g400);
+      background:var(--g50);
+      color:var(--g600);
+      transform:translateY(-1px);
+      box-shadow:var(--sh-sm);
+    }
+    .demo-btn svg { flex-shrink:0; transition:transform var(--fast); }
+    .demo-btn:hover svg { transform:translateX(2px) scale(1.05); }
+
+    /* ============================================================
+       VIDEO SUMMARY (desktop only)
+    ============================================================ */
+    .video-summary-section { display:none; } /* hidden on mobile/tablet */
+
+    @media (min-width:1025px) {
+      .video-summary-section {
+        display:block;
+        margin-top:0;
+      }
+    }
+
+    .summary-card {
+      background:var(--w);
+      border-radius:var(--r-md);
+      border:1px solid var(--n200);
+      padding:26px 30px;
+      box-shadow:var(--sh-xs);
+      transition:box-shadow var(--normal);
+    }
+    .summary-card:hover { box-shadow:var(--sh-sm); }
+    .section-heading {
+      display:flex; align-items:center; gap:11px;
+      font-family:var(--font-display);
+      font-size:var(--text-xl);
+      font-weight:800;
+      color:var(--n900);
+      margin-bottom:14px;
+      letter-spacing:-.01em;
+    }
+    .section-heading svg { flex-shrink:0; }
+    .summary-text p {
+      font-size:var(--text-md);
+      color:var(--n600);
+      line-height:1.82;
+      margin-bottom:10px;
+    }
+    .summary-text p:last-child { margin-bottom:0; }
+
+    /* ============================================================
+       PRICING — Premium redesign
+    ============================================================ */
+    .pricing-section { 
+      margin-top:52px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pricing-header { text-align:center; margin-bottom:40px; }
+    .pricing-eyebrow {
+      display:inline-flex; align-items:center; gap:7px;
+      font-size:var(--text-xs);
+      font-weight:700; color:var(--g600);
+      background:var(--g50); border:1px solid var(--g200);
+      padding:4px 14px; border-radius:20px;
+      text-transform:uppercase; letter-spacing:.05em;
+      margin-bottom:12px;
+    }
+    .pricing-title {
+      font-family:var(--font-display);
+      font-size:clamp(1.45rem,3.5vw,2.1rem);
+      font-weight:800; color:var(--n900);
+      letter-spacing:-.025em;
+      margin-bottom:8px;
+    }
+    .pricing-subtitle {
+      font-size:var(--text-lg);
+      color:var(--n500);
+      font-weight:400;
+    }
+
+    .pricing-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      align-items:start;
+    }
+
+    /* Base card */
+    .pricing-card {
+      background:var(--w);
+      border:1px solid var(--n200);
+      border-radius:var(--r-lg);
+      padding:28px 22px 26px;
+      display:flex; flex-direction:column;
+      text-align:left;
+      position:relative;
+      box-shadow:var(--sh-sm);
+      transition:all var(--normal);
+    }
+    .pricing-card:hover {
+      transform:translateY(-6px);
+      box-shadow:var(--sh-lg);
+      border-color:var(--n300);
+    }
+
+    /* Featured / middle card */
+    .pricing-card--featured {
+      border:2px solid var(--g400);
+      box-shadow:var(--sh-green), 0 0 0 4px rgba(34,197,94,.07);
+      background:linear-gradient(158deg,#fff 0%,#f5fdf8 100%);
+      transform:scale(1.03) translateY(-4px);
+      z-index:2;
+    }
+    .pricing-card--featured:hover {
+      transform:scale(1.03) translateY(-10px);
+      box-shadow:var(--sh-green-lg), 0 0 0 5px rgba(34,197,94,.1);
+    }
+
+    .featured-badge {
+      position:absolute;
+      top:-1px; left:50%;
+      transform:translateX(-50%);
+      background:linear-gradient(135deg,var(--g500),var(--g600));
+      color:var(--w);
+      font-size:var(--text-xs);
+      font-weight:700; letter-spacing:.06em;
+      text-transform:uppercase;
+      padding:4px 18px;
+      border-radius:0 0 10px 10px;
+      box-shadow:0 4px 14px rgba(34,197,94,.3);
+      white-space:nowrap;
+    }
+
+    /* Plan icon — premium SVG */
+    .plan-icon-wrap {
+      width:52px; height:52px;
+      border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:16px;
+      transition:transform var(--fast);
+    }
+    .pricing-card:hover .plan-icon-wrap { transform:scale(1.06); }
+
+    .plan-icon-wrap--starter {
+      background:linear-gradient(135deg,#e0f2fe,#bae6fd);
+      box-shadow:0 4px 16px rgba(14,165,233,.18);
+    }
+    .plan-icon-wrap--growth {
+      background:linear-gradient(135deg,var(--g100),var(--g200));
+      box-shadow:0 4px 16px rgba(34,197,94,.22);
+    }
+    .plan-icon-wrap--premium {
+      background:linear-gradient(135deg,#fdf4ff,#e9d5ff);
+      box-shadow:0 4px 16px rgba(168,85,247,.18);
+    }
+
+    .plan-name {
+      font-family:var(--font-display);
+      font-size:var(--text-xl);
+      font-weight:800;
+      color:var(--n900);
+      letter-spacing:-.015em;
+      margin-bottom:3px;
+    }
+    .plan-desc {
+      font-size:var(--text-sm);
+      color:var(--n500);
+      line-height:1.5;
+      margin-bottom:18px;
+    }
+
+    .plan-price-block {
+      margin-bottom:20px;
+      padding-bottom:20px;
+      border-bottom:1px solid var(--n100);
+    }
+    .plan-currency {
+      font-size:var(--text-sm);
+      font-weight:700;
+      color:var(--g600);
+      vertical-align:top;
+      line-height:2;
+      margin-right:2px;
+    }
+    .plan-amount {
+      font-family:var(--font-display);
+      font-size:clamp(1.5rem,3vw,1.95rem);
+      font-weight:800;
+      color:var(--n900);
+      letter-spacing:-.025em;
+    }
+    .plan-period {
+      font-size:var(--text-xs);
+      color:var(--n400);
+      font-weight:500;
+      margin-left:3px;
+    }
+
+    .plan-features {
+      display:flex; flex-direction:column;
+      gap:9px; flex:1;
+      margin-bottom:22px;
+    }
+    .plan-features li {
+      display:flex; align-items:flex-start;
+      gap:9px;
+      font-size:var(--text-sm); color:var(--n600); line-height:1.45;
+    }
+    .feat-icon { flex-shrink:0; margin-top:1px; }
+
+    /* CTA link */
+    .plan-cta {
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:7px;
+      width:100%;
+      padding:11px 20px;
+      border-radius:var(--r-sm);
+      font-size:var(--text-sm);
+      font-weight:700;
+      transition:all var(--fast);
+      text-decoration:none;
+    }
+    .plan-cta--outline {
+      border:1.5px solid var(--n200);
+      color:var(--n700);
+      background:transparent;
+    }
+    .plan-cta--outline:hover {
+      border-color:var(--g400);
+      color:var(--g600);
+      background:var(--g50);
+      transform:translateY(-1px);
+    }
+    .plan-cta--solid {
+      background:linear-gradient(135deg,var(--g500),var(--g600));
+      color:var(--w);
+      border:none;
+      box-shadow:0 4px 18px rgba(34,197,94,.3);
+    }
+    .plan-cta--solid:hover {
+      box-shadow:0 8px 28px rgba(34,197,94,.42);
+      transform:translateY(-2px);
+    }
+
+    /* ============================================================
+       CTA BANNER
+    ============================================================ */
+    .cta-section { margin-top:52px; }
+
+    .cta-card {
+      background:linear-gradient(135deg,var(--g500) 0%,var(--g600) 55%,var(--g700) 100%);
+      border-radius:var(--r-xl);
+      padding:40px 44px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:28px;
+      box-shadow:var(--sh-green-lg);
+      animation:ctaPulse 3.5s ease-in-out infinite;
+      position:relative; overflow:hidden;
+    }
+    .cta-card::before {
+      content:'';
+      position:absolute;
+      top:-60%; right:-15%;
+      width:55%; height:220%;
+      background:radial-gradient(circle,rgba(255,255,255,.05) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .cta-card::after {
+      content:'';
+      position:absolute;
+      bottom:-40%; left:-8%;
+      width:40%; height:150%;
+      background:radial-gradient(circle,rgba(0,229,160,.07) 0%,transparent 65%);
+      pointer-events:none;
+    }
+    .cta-content { flex:1; position:relative; z-index:1; }
+    .cta-title {
+      font-family:var(--font-display);
+      font-size:clamp(1.15rem,2.5vw,1.5rem);
+      font-weight:800; color:var(--w);
+      letter-spacing:-.02em; line-height:1.22;
+      margin-bottom:6px;
+    }
+    .cta-subtitle {
+      font-size:var(--text-md);
+      color:rgba(255,255,255,.78);
+      font-weight:400; line-height:1.6;
+    }
+    .cta-btn {
+      display:inline-flex; align-items:center; gap:11px;
+      padding:14px 28px;
+      background:var(--w);
+      color:var(--g700);
+      font-weight:700; font-size:var(--text-md);
+      border-radius:var(--r-sm);
+      box-shadow:0 4px 18px rgba(0,0,0,.12);
+      transition:all var(--normal);
+      text-decoration:none;
+      position:relative; z-index:1;
+      flex-shrink:0; white-space:nowrap;
+    }
+    .cta-btn:hover {
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 10px 36px rgba(0,0,0,.18);
+    }
+    .cta-btn svg { flex-shrink:0; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      position:relative; z-index:1;
+      max-width:var(--max-w);
+      margin:0 auto;
+      padding:24px var(--gutter) 36px;
+      text-align:center;
+      font-size:var(--text-sm);
+      color:var(--n400);
+      border-top:1px solid var(--n200);
+      margin-top:52px;
+    }
+    .footer .heart { color:#ef4444; display:inline-block; animation:float 2s ease-in-out infinite; }
+
+    /* ============================================================
+       DESKTOP LAYOUT — two-column for main + sidebar
+    ============================================================ */
+    @media (min-width:1025px) {
+      .content-stack {
+        display:grid;
+        grid-template-columns:1fr 360px;
+        grid-template-rows:auto auto auto auto auto;
+        column-gap:28px;
+        row-gap:20px;
+        align-items:start;
+      }
+
+      /* Column assignments */
+      .video-container      { grid-column:1; grid-row:1; }
+      .panel-card           { grid-column:2; grid-row:1 / 4; align-self:start; }
+      .video-summary-section{ grid-column:1; grid-row:2; }
+      .pricing-section      { grid-column:1 / 3; grid-row:3; }
+      .cta-section          { grid-column:1 / 3; grid-row:4; }
+
+      /* Panel max-height on desktop */
+      .panel-body { max-height:380px; }
+    }
+
+    /* ============================================================
+       RESPONSIVE TWEAKS
+    ============================================================ */
+
+    /* Tablet & Mobile: hide benefit list, show prose */
+    @media (max-width:1024px) {
+      .benefit-list { display:none !important; }
+      .summary-prose { display:block; }
+      
+      .pricing-grid {
+        grid-template-columns:1fr 1fr;
+        gap:16px;
+      }
+      .pricing-card--featured { transform:none; scale:1; }
+      .pricing-card--featured:hover { transform:translateY(-6px); }
+      .cta-card { flex-direction:column; text-align:center; padding:30px 24px; }
+      .cta-btn  { width:100%; justify-content:center; }
+      .video-summary-section { display:none!important; }
+    }
+
+    /* Desktop: hide prose, show benefit list */
+    @media (min-width:1025px) {
+      .summary-prose { display:none !important; }
+      .benefit-list { display:flex; }
+    }
+
+    @media (max-width:640px) {
+      .pricing-grid { grid-template-columns:1fr; gap:14px; }
+      .pricing-card--featured {
+        order:-1;
+        transform:none!important; scale:1!important;
+        border:2px solid var(--g400);
+      }
+      .plan-amount { font-size:1.55rem; }
+      .cta-card { padding:22px 18px; border-radius:var(--r-lg); }
+      .cta-title { font-size:1.1rem; }
+      .cta-btn { padding:12px 20px; font-size:var(--text-md); }
+      .tab-content { padding:14px 16px; }
+      .panel-footer { padding:13px 16px 15px; }
+    }
+
+    @media (max-width:400px) {
+      .logo-brand { font-size:15px; }
+      .cta-card { padding:18px 14px; }
+      .cta-title { font-size:1rem; }
+      .pricing-card { padding:20px 16px; }
+    }
+
+    /* ----- Sticky Sidebar Fix ----- */
+    @media (min-width:1025px) {
+      .panel-card {
+        position: sticky;
+        top: calc(var(--header-h) + 16px);
+        transition: top 0.1s ease;
+        z-index: 5;
+      }
+    }
+
+    /* Pricing section anchor for sticky detection */
+    #pricing-anchor {
+      position: relative;
+      height: 1px;
+      margin-top: -1px;
+      pointer-events: none;
+    }
+    
+    /* Fullscreen mobile fix */
+    .video-container.fullscreen {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      border-radius: 0 !important;
+      z-index: 9999 !important;
+      background: #000 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .video-container.fullscreen .video-wrapper {
+      width: 100% !important;
+      height: 100% !important;
+      padding-top: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: transparent !important;
+    }
+    .video-container.fullscreen .video-wrapper video {
+      position: relative !important;
+      width: auto !important;
+      height: auto !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: contain !important;
+    }
+    .video-container.fullscreen .video-wrapper .video-background-blur {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) scale(1.1) !important;
+      width: 100% !important;
+      height: 100% !important;
+      filter: blur(40px) brightness(0.3) !important;
+      z-index: 0 !important;
+      background-size: cover !important;
+      background-position: center !important;
+    }
+    .video-container.fullscreen .video-wrapper .video-thumbnail {
+      object-fit: contain !important;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
-  <header id="header" class="header">
-    <div class="header-inner">
-      <a href="#" class="logo" aria-label="FAZMEN Home">
-        <div class="logo-icon" aria-hidden="true">F</div>
-        <span class="logo-text">Fahril Creative - Fazmen</span>
-      </a>
+<!-- Subtle particle background -->
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo" aria-label="FAZMEN Home">
+      <!-- Premium lightning-F SVG mark -->
+      <div class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="url(#logoGrad)"/>
+          <path d="M20 8L11 20H18.5L15 30L27 17H19.5L23 8H20Z" fill="white" opacity="0.95"/>
+          <rect x="1" y="1" width="36" height="36" rx="9" stroke="white" stroke-opacity="0.15" stroke-width="1" fill="none"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#22c55e"/>
+              <stop offset="1" stop-color="#16a34a"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="logo-wordmark">
+        <span class="logo-brand">FAZMEN</span>
+        <span class="logo-sub">Audit Platform</span>
+      </div>
+    </a>
+  </div>
+</header>
+
+<!-- ========== MAIN ========== -->
+<main>
+
+  <!-- Title -->
+  <section class="title-section fade-in">
+    <div class="page-eyebrow">
+      <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 10.5h-1.5v-5h1.5v5zm0-6.5h-1.5V3.5h1.5V5z"/></svg>
+      Website Audit Report
     </div>
-  </header>
-
-  <!-- ========== MAIN ========== -->
-  <main id="main-content">
-
-    <!-- Title Section -->
-    <section class="title-section fade-in" id="title-section">
-      <h1 class="page-title">Audit Website – <span id="clinic-name">Klinik Cantik A</span></h1>
-      <p class="audit-date">
-        <svg class="date-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    <h1 class="page-title">Audit Website — <span class="clinic-accent" id="clinic-name">Klinik Cantik A</span></h1>
+    <div class="audit-meta">
+      <span class="meta-pill">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <span id="audit-date">22 Juni 2026</span>
-      </p>
-    </section>
+      </span>
+      <span class="meta-pill">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Audit Video Profesional
+      </span>
+    </div>
+  </section>
 
-    <!-- Content Grid -->
-    <div class="content-grid">
+  <!-- Content stack -->
+  <div class="content-stack">
 
-      <!-- ===== LEFT COLUMN ===== -->
-      <div class="main-column">
+    <!-- ===== VIDEO PLAYER ===== -->
+    <div class="video-container fade-in" id="video-container">
+      <div class="video-wrapper" id="video-wrapper">
 
-        <!-- Video Player -->
-        <div class="video-container fade-in" id="video-container">
-          <div class="video-wrapper" id="video-wrapper">
-            <!-- Skeleton Loader -->
-            <div class="video-skeleton" id="video-skeleton">
-              <div class="skeleton-shimmer"></div>
-              <div class="skeleton-play-btn">
-                <svg viewBox="0 0 24 24" width="48" height="48" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
-              </div>
+        <!-- Thumbnail -->
+        <img class="video-thumbnail" id="video-thumbnail" src="thumbnail/thumbnail.jpg" alt="Video thumbnail" />
+
+        <!-- Blur background for fullscreen -->
+        <div class="video-background-blur" id="video-background-blur"></div>
+
+        <div class="video-skeleton" id="video-skeleton">
+          <div class="skeleton-shimmer"></div>
+          <div class="skeleton-play-btn">
+            <svg viewBox="0 0 24 24" width="44" height="44" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+
+        <video id="video-player" preload="metadata" playsinline>
+          <source src="videos/personal.mp4" type="video/mp4">
+          Browser Anda tidak mendukung video tag.
+        </video>
+
+        <!-- Buffering overlay -->
+        <div class="buffering-overlay" id="buffering-overlay">
+          <div class="buffering-spinner"></div>
+        </div>
+
+        <div class="video-overlay" id="video-overlay">
+          <button class="big-play-btn" id="big-play-btn" aria-label="Putar Video">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+        </div>
+
+        <div class="video-controls" id="video-controls">
+          <div class="seek-bar-container" id="seek-bar-container">
+            <div class="seek-bar-track" id="seek-bar-track">
+              <div class="seek-bar-buffered" id="seek-bar-buffered"></div>
+              <div class="seek-bar-filled"   id="seek-bar-filled"></div>
+              <div class="seek-bar-handle"   id="seek-bar-handle"></div>
             </div>
-
-            <video id="video-player" preload="metadata" playsinline>
-              <source src="videos/personal.mp4" type="video/mp4">
-              Browser Anda tidak mendukung video tag.
-            </video>
-
-            <!-- Video Overlay (Click to play) -->
-            <div class="video-overlay" id="video-overlay">
-              <button class="big-play-btn" id="big-play-btn" aria-label="Putar Video">
-                <svg viewBox="0 0 24 24" width="32" height="32" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <div class="controls-row">
+            <div class="controls-left">
+              <button class="ctrl-btn" id="ctrl-play" aria-label="Play / Pause">
+                <svg class="icon-play"  viewBox="0 0 24 24" width="19" height="19" fill="white"><polygon points="6,3 20,12 6,21"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" width="19" height="19" fill="white" style="display:none"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>
+              </button>
+              <button class="ctrl-btn" id="ctrl-rewind" aria-label="Mundur 10 detik">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+                  <path d="M11.99 5V1l-5 5 5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6h-2c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+                  <text x="10" y="16" font-size="6.5" fill="white" text-anchor="middle" font-weight="800">10</text>
+                </svg>
+              </button>
+              <span class="time-display" id="time-display">0:00 / 0:00</span>
+            </div>
+            <div class="controls-right">
+              <button class="ctrl-btn ctrl-speed" id="ctrl-speed" aria-label="Kecepatan Putar">1x</button>
+              <button class="ctrl-btn" id="ctrl-pip" aria-label="Picture in Picture">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="white"><path d="M19 11h-8v6h8v-6zm4 8V4.98C23 3.88 22.1 3 21 3H3c-1.1 0-2 .88-2 1.98V19c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2zm-2 .02H3V4.97h18v14.05z"/></svg>
+              </button>
+              <button class="ctrl-btn" id="ctrl-fullscreen" aria-label="Layar Penuh">
+                <svg class="icon-expand"   viewBox="0 0 24 24" width="17" height="17" fill="white"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                <svg class="icon-compress" viewBox="0 0 24 24" width="17" height="17" fill="white" style="display:none"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></svg>
               </button>
             </div>
-
-            <!-- Custom Controls -->
-            <div class="video-controls" id="video-controls">
-              <div class="seek-bar-container" id="seek-bar-container">
-                <div class="seek-bar-track" id="seek-bar-track">
-                  <div class="seek-bar-buffered" id="seek-bar-buffered"></div>
-                  <div class="seek-bar-filled" id="seek-bar-filled"></div>
-                  <div class="seek-bar-handle" id="seek-bar-handle"></div>
-                </div>
-              </div>
-              <div class="controls-row">
-                <div class="controls-left">
-                  <button class="ctrl-btn" id="ctrl-play" aria-label="Play / Pause">
-                    <svg class="icon-play" viewBox="0 0 24 24" width="20" height="20" fill="white"><polygon points="6,3 20,12 6,21"/></svg>
-                    <svg class="icon-pause" viewBox="0 0 24 24" width="20" height="20" fill="white" style="display:none"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>
-                  </button>
-                  <button class="ctrl-btn" id="ctrl-rewind" aria-label="Mundur 10 detik">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M11.99 5V1l-5 5 5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6h-2c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/><text x="10" y="16" font-size="7" fill="white" text-anchor="middle" font-weight="700">10</text></svg>
-                  </button>
-                  <span class="time-display" id="time-display">0:00 / 0:00</span>
-                </div>
-                <div class="controls-right">
-                  <button class="ctrl-btn ctrl-speed" id="ctrl-speed" aria-label="Kecepatan Putar">1x</button>
-                  <button class="ctrl-btn" id="ctrl-pip" aria-label="Picture in Picture">
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M19 11h-8v6h8v-6zm4 8V4.98C23 3.88 22.1 3 21 3H3c-1.1 0-2 .88-2 1.98V19c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2zm-2 .02H3V4.97h18v14.05z"/></svg>
-                  </button>
-                  <button class="ctrl-btn" id="ctrl-fullscreen" aria-label="Layar Penuh">
-                    <svg class="icon-expand" viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
-                    <svg class="icon-compress" viewBox="0 0 24 24" width="18" height="18" fill="white" style="display:none"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></svg>
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-
-        <!-- Video Summary Section (Below Video) -->
-        <section class="video-summary-section scroll-reveal" id="video-summary-section">
-          <div class="summary-card">
-            <h2 class="section-heading">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              Ringkasan Video
-            </h2>
-            <div class="summary-text">
-              <p>Dalam video ini saya memperlihatkan bagaimana calon pasien menemukan klinik melalui pencarian online, melihat informasi treatment, dan melakukan booking secara langsung melalui WhatsApp.</p>
-              <p>Website dirancang untuk meningkatkan kredibilitas klinik, memberikan pengalaman yang lebih baik kepada calon pasien, dan menjadi pusat informasi digital yang dapat diakses kapan saja.</p>
-              <p>Saya juga menjelaskan pilihan paket website yang tersedia serta bagaimana website dapat menjadi aset digital jangka panjang untuk klinik Anda.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section class="pricing-section scroll-reveal" id="pricing-section">
-          <h2 class="section-heading-center">Pilihan Paket Website</h2>
-          <div class="pricing-grid">
-
-            <!-- Starter -->
-            <div class="pricing-card" id="pricing-starter">
-              <div class="pricing-card-header">
-                <h3 class="plan-name">Starter</h3>
-                <p class="plan-desc">Cocok untuk klinik yang baru mulai membangun kehadiran online.</p>
-              </div>
-              <div class="plan-price">
-                <span class="currency">Rp</span>
-                <span class="amount">1.500.000</span>
-              </div>
-              <ul class="plan-features">
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>4 Halaman</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Booking via WhatsApp</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Mobile Friendly</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Form Konsultasi</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Integrasi Google Maps</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic SEO</li>
-              </ul>
-              <a href="#cta-section" class="plan-cta-link">Lihat Detail →</a>
-            </div>
-
-            <!-- Growth -->
-            <div class="pricing-card pricing-card--popular" id="pricing-growth">
-              <div class="popular-badge">Populer</div>
-              <div class="pricing-card-header">
-                <h3 class="plan-name">Growth</h3>
-                <p class="plan-desc">Meningkatkan kepercayaan calon pasien.</p>
-              </div>
-              <div class="plan-price">
-                <span class="currency">Rp</span>
-                <span class="amount">2.500.000</span>
-              </div>
-              <ul class="plan-features">
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>6 Halaman</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Semua fitur Starter</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Halaman Treatment Lengkap</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Testimoni Pasien</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Galeri Before After</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>FAQ</li>
-              </ul>
-              <a href="#cta-section" class="plan-cta-link">Lihat Detail →</a>
-            </div>
-
-            <!-- Premium -->
-            <div class="pricing-card" id="pricing-premium">
-              <div class="pricing-card-header">
-                <h3 class="plan-name">Premium</h3>
-                <p class="plan-desc">Untuk klinik yang serius membangun aset digital.</p>
-              </div>
-              <div class="plan-price">
-                <span class="currency">Rp</span>
-                <span class="amount">5.000.000</span>
-              </div>
-              <ul class="plan-features">
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>10 Halaman</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Semua fitur Growth</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Landing Page Promo</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Blog Artikel</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Integrasi Meta Pixel & Analytics</li>
-                <li><svg class="check-icon" viewBox="0 0 24 24" width="18" height="18"><polyline points="20 6 9 17 4 12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tracking Konversi</li>
-              </ul>
-              <a href="#cta-section" class="plan-cta-link">Lihat Detail →</a>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section scroll-reveal" id="cta-section">
-          <div class="cta-card">
-            <div class="cta-content">
-              <h2 class="cta-title">Tertarik Membuat Website Profesional untuk Klinik Anda?</h2>
-              <p class="cta-subtitle">Klik tombol di samping untuk menghubungi kami via WhatsApp.</p>
-            </div>
-            <a href="https://wa.me/628xxxxxxxxxx?text=Halo%2C%20saya%20tertarik%20membuat%20website%20untuk%20klinik%20saya." class="cta-btn" id="cta-whatsapp-btn" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Chat WhatsApp Sekarang
-            </a>
-          </div>
-        </section>
 
       </div>
+    </div>
 
-      <!-- ===== SIDEBAR ===== -->
-      <aside class="sidebar" id="sidebar">
-        <div class="sidebar-inner">
+    <!-- ===== SIDEBAR PANEL (summary + transcript + progress) ===== -->
+    <div class="panel-card" id="panel-card">
+      <div class="sidebar-tabs" role="tablist">
+        <button class="tab-btn active" id="tab-btn-ringkasan" role="tab" aria-selected="true" aria-controls="tab-ringkasan" data-tab="ringkasan">Ringkasan</button>
+        <button class="tab-btn" id="tab-btn-transcript" role="tab" aria-selected="false" aria-controls="tab-transcript" data-tab="transcript">Transcript</button>
+      </div>
 
-          <!-- Tabs -->
-          <div class="sidebar-tabs" role="tablist">
-            <button class="tab-btn active" id="tab-btn-ringkasan" role="tab" aria-selected="true" aria-controls="tab-ringkasan" data-tab="ringkasan">Ringkasan</button>
-            <button class="tab-btn" id="tab-btn-transcript" role="tab" aria-selected="false" aria-controls="tab-transcript" data-tab="transcript">Transcript</button>
+      <div class="panel-body">
+        <!-- Summary tab -->
+        <div class="tab-content active" id="tab-ringkasan" role="tabpanel">
+          <!-- Benefit list - desktop only -->
+          <div class="benefit-list">
+            <div class="benefit-item">
+              <svg class="benefit-check" viewBox="0 0 22 22" width="20" height="20"><circle cx="11" cy="11" r="10" fill="#dcfce7"/><polyline points="15.5 7.5 9.5 14.5 6.5 11.5" fill="none" stroke="#22c55e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Meningkatkan peluang booking konsultasi dari calon pasien</span>
+            </div>
+            <div class="benefit-item">
+              <svg class="benefit-check" viewBox="0 0 22 22" width="20" height="20"><circle cx="11" cy="11" r="10" fill="#dcfce7"/><polyline points="15.5 7.5 9.5 14.5 6.5 11.5" fill="none" stroke="#22c55e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Mempermudah pasien menghubungi klinik melalui WhatsApp</span>
+            </div>
+            <div class="benefit-item">
+              <svg class="benefit-check" viewBox="0 0 22 22" width="20" height="20"><circle cx="11" cy="11" r="10" fill="#dcfce7"/><polyline points="15.5 7.5 9.5 14.5 6.5 11.5" fill="none" stroke="#22c55e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Meningkatkan kredibilitas klinik secara online</span>
+            </div>
+            <div class="benefit-item">
+              <svg class="benefit-check" viewBox="0 0 22 22" width="20" height="20"><circle cx="11" cy="11" r="10" fill="#dcfce7"/><polyline points="15.5 7.5 9.5 14.5 6.5 11.5" fill="none" stroke="#22c55e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Membantu calon pasien menemukan informasi treatment lebih cepat</span>
+            </div>
+            <div class="benefit-item">
+              <svg class="benefit-check" viewBox="0 0 22 22" width="20" height="20"><circle cx="11" cy="11" r="10" fill="#dcfce7"/><polyline points="15.5 7.5 9.5 14.5 6.5 11.5" fill="none" stroke="#22c55e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Tampilan profesional yang membangun kepercayaan</span>
+            </div>
+            <div class="benefit-item">
+              <svg class="benefit-check" viewBox="0 0 22 22" width="20" height="20"><circle cx="11" cy="11" r="10" fill="#dcfce7"/><polyline points="15.5 7.5 9.5 14.5 6.5 11.5" fill="none" stroke="#22c55e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Mobile friendly untuk pengguna smartphone</span>
+            </div>
+            <div class="benefit-item">
+              <svg class="benefit-check" viewBox="0 0 22 22" width="20" height="20"><circle cx="11" cy="11" r="10" fill="#dcfce7"/><polyline points="15.5 7.5 9.5 14.5 6.5 11.5" fill="none" stroke="#22c55e" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Website dapat diakses 24 jam oleh calon pasien</span>
+            </div>
           </div>
-
-          <!-- Tab Content -->
-          <div class="sidebar-body">
-
-            <!-- Ringkasan Tab -->
-            <div class="tab-content active" id="tab-ringkasan" role="tabpanel" aria-labelledby="tab-btn-ringkasan">
-              <div class="ringkasan-content">
-                <div class="benefit-item">
-                  <svg class="benefit-check" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="#dcfce7"/><polyline points="17 8 10 16 7 13" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Meningkatkan peluang booking konsultasi dari calon pasien</span>
-                </div>
-                <div class="benefit-item">
-                  <svg class="benefit-check" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="#dcfce7"/><polyline points="17 8 10 16 7 13" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Mempermudah pasien menghubungi klinik melalui WhatsApp</span>
-                </div>
-                <div class="benefit-item">
-                  <svg class="benefit-check" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="#dcfce7"/><polyline points="17 8 10 16 7 13" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Meningkatkan kredibilitas klinik secara online</span>
-                </div>
-                <div class="benefit-item">
-                  <svg class="benefit-check" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="#dcfce7"/><polyline points="17 8 10 16 7 13" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Membantu calon pasien menemukan informasi treatment lebih cepat</span>
-                </div>
-                <div class="benefit-item">
-                  <svg class="benefit-check" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="#dcfce7"/><polyline points="17 8 10 16 7 13" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Tampilan profesional yang membangun kepercayaan</span>
-                </div>
-                <div class="benefit-item">
-                  <svg class="benefit-check" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="#dcfce7"/><polyline points="17 8 10 16 7 13" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Mobile friendly untuk pengguna smartphone</span>
-                </div>
-                <div class="benefit-item">
-                  <svg class="benefit-check" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="#dcfce7"/><polyline points="17 8 10 16 7 13" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span>Website dapat diakses 24 jam oleh calon pasien</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Transcript Tab -->
-            <div class="tab-content" id="tab-transcript" role="tabpanel" aria-labelledby="tab-btn-transcript">
-              <div class="transcript-list" id="transcript-list">
-                <!-- Skeleton for transcript -->
-                <div class="transcript-skeleton" id="transcript-skeleton">
-                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
-                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
-                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
-                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
-                  <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
-                </div>
-                <!-- Transcript entries loaded via JS -->
-              </div>
-            </div>
-
+          <!-- Summary prose - mobile/tablet only -->
+          <div class="summary-prose">
+            <p><strong>Coba bayangkan: calon pasien menemukan klinik Anda, langsung paham treatment apa saja yang tersedia, lalu bisa menghubungi Anda hanya dalam beberapa klik. Menarik, kan?</strong></p>
+            <p>Di video ini, saya tunjukkan bagaimana website yang dirancang dengan tepat bisa bikin klinik kecantikan Anda terlihat lebih profesional, lebih gampang ditemukan di Google, dan pastinya lebih nyaman buat calon pasien. Mereka nggak perlu lagi tanya satu-satu karena info penting seperti treatment, lokasi, dan cara booking sudah tersaji jelas. Hasilnya? Mereka bisa ambil keputusan lebih cepat.</p>
+            <p>Saya juga perlihatkan alur perjalanan calon pasien dari mulai searching sampai akhirnya menghubungi klinik lewat WhatsApp. Ketika mereka bisa dapat info yang dibutuhkan dengan mudah, trust mereka ke klinik otomatis naik. Dan peluang mereka untuk konsultasi jadi jauh lebih besar. Website itu bukan sekadar tampilan online, tapi aset digital yang kerja 24/7 membangun kredibilitas klinik Anda setiap hari.</p>
+            <p>Di bagian akhir video, saya jelaskan pilihan paket website yang tersedia dan kenapa ini bisa jadi investasi jangka panjang buat perkembangan klinik Anda. Pertanyaan sederhananya begini: saat calon pasien cari layanan kecantikan di kota Anda, mereka bakal nemuin klinik Anda duluan atau justru kompetitor?</p>
           </div>
-
-          <!-- Sidebar Footer / Progress -->
-          <div class="sidebar-footer">
-            <div class="progress-row">
-              <span class="progress-label">Progress Menonton</span>
-              <span class="progress-value" id="progress-percent">0%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" id="watch-progress-fill"></div>
-            </div>
-            <p class="duration-label">Durasi Video <span id="total-duration">0:00</span></p>
-          </div>
-
         </div>
-      </aside>
 
-    </div><!-- /.content-grid -->
+        <!-- Transcript tab -->
+        <div class="tab-content" id="tab-transcript" role="tabpanel">
+          <div class="transcript-list" id="transcript-list">
+            <div class="transcript-skeleton" id="transcript-skeleton">
+              <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+              <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+              <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+              <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+              <div class="ts-item"><div class="ts-time skeleton-box"></div><div class="ts-text skeleton-box"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  </main>
+      <!-- Panel footer -->
+      <div class="panel-footer">
+        <div class="progress-row">
+          <span class="progress-label">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Progress Menonton
+          </span>
+          <span class="progress-value" id="progress-percent">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="watch-progress-fill"></div>
+        </div>
+        <p class="duration-label">Durasi Video <span id="total-duration">0:00</span></p>
+        <div class="demo-btn-wrap">
+          <a href="https://portofolio2.fazmen.my.id" target="_blank" rel="noopener noreferrer" class="demo-btn">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Kunjungi Website Demo
+          </a>
+        </div>
+      </div>
+    </div>
 
-  <!-- ========== FOOTER ========== -->
-  <footer id="footer" class="footer">
-    <p>Made with <span class="heart">❤️</span> by Fahril Creative</p>
-  </footer>
+    <!-- ===== VIDEO SUMMARY — desktop only ===== -->
+    <section class="video-summary-section scroll-reveal">
+      <div class="summary-card">
+        <h2 class="section-heading">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          Ringkasan Video
+        </h2>
+        <div class="summary-text">
+          <p><strong>Coba bayangkan: calon pasien menemukan klinik Anda, langsung paham treatment apa saja yang tersedia, lalu bisa menghubungi Anda hanya dalam beberapa klik. Menarik, kan?</strong></p>
+          <p>Di video ini, saya tunjukkan bagaimana website yang dirancang dengan tepat bisa bikin klinik kecantikan Anda terlihat lebih profesional, lebih gampang ditemukan di Google, dan pastinya lebih nyaman buat calon pasien. Mereka nggak perlu lagi tanya satu-satu karena info penting seperti treatment, lokasi, dan cara booking sudah tersaji jelas. Hasilnya? Mereka bisa ambil keputusan lebih cepat.</p>
+          <p>Saya juga perlihatkan alur perjalanan calon pasien dari mulai searching sampai akhirnya menghubungi klinik lewat WhatsApp. Ketika mereka bisa dapat info yang dibutuhkan dengan mudah, trust mereka ke klinik otomatis naik. Dan peluang mereka untuk konsultasi jadi jauh lebih besar. Website itu bukan sekadar tampilan online, tapi aset digital yang kerja 24/7 membangun kredibilitas klinik Anda setiap hari.</p>
+          <p>Di bagian akhir video, saya jelaskan pilihan paket website yang tersedia dan kenapa ini bisa jadi investasi jangka panjang buat perkembangan klinik Anda. Pertanyaan sederhananya begini: saat calon pasien cari layanan kecantikan di kota Anda, mereka bakal nemuin klinik Anda duluan atau justru kompetitor?</p>
+        </div>
+      </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- ===== PRICING ===== -->
+    <section class="pricing-section scroll-reveal" id="pricing-section">
+      <!-- Anchor for sticky detection -->
+      <div id="pricing-anchor"></div>
+      
+      <div class="pricing-header">
+        <div class="pricing-eyebrow">
+          <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 1l1.95 3.95L14 5.82l-3 2.92.71 4.12L8 10.65l-3.71 2.21L5 8.74 2 5.82l4.05-.87L8 1z"/></svg>
+          Pilih Paket Anda
+        </div>
+        <h2 class="pricing-title">Paket Website Klinik</h2>
+        <p class="pricing-subtitle">Solusi digital yang sesuai dengan kebutuhan dan budget klinik Anda</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Starter -->
+        <div class="pricing-card" id="pricing-starter">
+          <div class="plan-icon-wrap plan-icon-wrap--starter">
+            <!-- Rocket / spark icon for Starter -->
+            <svg viewBox="0 0 28 28" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 3C14 3 7 10 7 17a7 7 0 0014 0c0-7-7-14-7-14z" fill="#0ea5e9" opacity=".9"/>
+              <circle cx="14" cy="17" r="3" fill="white" opacity=".95"/>
+              <path d="M10 22l-3 3M18 22l3 3" stroke="#0ea5e9" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="plan-name">Starter</h3>
+          <p class="plan-desc">Cocok untuk klinik yang baru mulai membangun kehadiran online.</p>
+          <div class="plan-price-block">
+            <span class="plan-currency">Rp</span><span class="plan-amount">1.500.000</span>
+          </div>
+          <ul class="plan-features">
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>4 Halaman</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Booking via WhatsApp</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Mobile Friendly</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Form Konsultasi</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Integrasi Google Maps</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic SEO</li>
+          </ul>
+          <a href="https://wa.me/6285189297059?text=Halo%20kak%20saya%20tertarik%20dengan%20paket%20Starter." class="plan-cta plan-cta--outline">Mulai Sekarang</a>
+        </div>
+
+        <!-- Growth (featured) -->
+        <div class="pricing-card pricing-card--featured" id="pricing-growth">
+          <div class="featured-badge">⭐ Most Popular</div>
+          <div class="plan-icon-wrap plan-icon-wrap--growth">
+            <!-- Growth / trending icon -->
+            <svg viewBox="0 0 28 28" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 20l6-8 5 5 5-7 4 3" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="22" cy="8" r="3" fill="#22c55e" opacity=".85"/>
+              <path d="M20 6l4 4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="plan-name">Growth</h3>
+          <p class="plan-desc">Meningkatkan kepercayaan calon pasien untuk klinik berkembang.</p>
+          <div class="plan-price-block">
+            <span class="plan-currency">Rp</span><span class="plan-amount">2.500.000</span>
+          </div>
+          <ul class="plan-features">
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>6 Halaman</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Semua fitur Starter</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Halaman Treatment Lengkap</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Testimoni Pasien</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Galeri Before After</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>FAQ</li>
+          </ul>
+          <a href="https://wa.me/6285189297059?text=Halo%20kak%20saya%20tertarik%20dengan%20paket%20Growth." class="plan-cta plan-cta--solid">Pilih Growth</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="pricing-card" id="pricing-premium">
+          <div class="plan-icon-wrap plan-icon-wrap--premium">
+            <!-- Crown / premium icon -->
+            <svg viewBox="0 0 28 28" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 20h20M5 8l4 7 5-9 5 9 4-7-2 12H7L5 8z" stroke="#a855f7" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="5" cy="8"  r="2" fill="#c084fc"/>
+              <circle cx="14" cy="6" r="2" fill="#c084fc"/>
+              <circle cx="23" cy="8" r="2" fill="#c084fc"/>
+            </svg>
+          </div>
+          <h3 class="plan-name">Premium</h3>
+          <p class="plan-desc">Untuk klinik yang serius membangun aset digital jangka panjang.</p>
+          <div class="plan-price-block">
+            <span class="plan-currency">Rp</span><span class="plan-amount">5.000.000</span>
+          </div>
+          <ul class="plan-features">
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>10 Halaman</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Semua fitur Growth</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Landing Page Promo</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Blog Artikel</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Integrasi Meta Pixel & Analytics</li>
+            <li><svg class="feat-icon" viewBox="0 0 18 18" width="16" height="16"><polyline points="15.5 4.5 7 13 3 9" fill="none" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Tracking Konversi</li>
+          </ul>
+          <a href="https://wa.me/6285189297059?text=Halo%20kak%20saya%20tertarik%20dengan%20paket%20Premium." class="plan-cta plan-cta--outline">Pilih Premium</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section scroll-reveal" id="cta-section">
+      <div class="cta-card">
+        <div class="cta-content">
+          <h2 class="cta-title">Siap Meningkatkan Kredibilitas Klinik Anda?</h2>
+          <p class="cta-subtitle">Konsultasikan kebutuhan website Anda dengan tim kami sekarang — gratis.</p>
+        </div>
+        <a href="https://wa.me/6285189297059" class="cta-btn" id="cta-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat WhatsApp Sekarang
+        </a>
+      </div>
+    </section>
+
+  </div><!-- /.content-stack -->
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <p>Made with <span class="heart">❤️</span> by Fahril Creative — FAZMEN</p>
+</footer>
+
+<script>
+/* ============================================================
+   PARTICLES — lightweight canvas-based background dots
+============================================================ */
+(function initParticles() {
+  const canvas = document.getElementById('particles-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], raf;
+  const COUNT = 48;
+  const SPEED = 0.28;
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function createParticle() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.6 + 0.4,
+      vx: (Math.random() - .5) * SPEED,
+      vy: (Math.random() - .5) * SPEED,
+      alpha: Math.random() * .45 + .08
+    };
+  }
+
+  function init() {
+    resize();
+    particles = Array.from({length: COUNT}, createParticle);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(34,197,94,${p.alpha})`;
+      ctx.fill();
+    });
+    raf = requestAnimationFrame(draw);
+  }
+
+  // Respect prefers-reduced-motion
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!mq.matches) {
+    window.addEventListener('resize', () => { resize(); });
+    init();
+    draw();
+  }
+})();
+
+/* ============================================================
+   MAIN APP
+============================================================ */
+(function () {
+  'use strict';
+
+  const CONFIG = {
+    clinicName: 'Klinik Cantik A',
+    auditDate: '22 Juni 2026',
+    whatsappNumber: '6285189297059',
+    whatsappMessage: 'Halo, saya tertarik membuat website untuk klinik saya.',
+    transcriptPath: 'transcripts/transcript.json',
+    videos: { personal: 'videos/personal.mp4', main: 'videos/main.mp4' },
+    speedOptions: [0.5, 0.75, 1, 1.25, 1.5, 2],
+    introDuration: 7 // Default intro duration in seconds
+  };
+
+  const $ = (s, p = document) => p.querySelector(s);
+  const $$ = (s, p = document) => p.querySelectorAll(s);
+
+  const DOM = {
+    video:           $('#video-player'),
+    videoWrapper:    $('#video-wrapper'),
+    videoContainer:  $('#video-container'),
+    thumbnail:       $('#video-thumbnail'),
+    blurBackground:  $('#video-background-blur'),
+    skeleton:        $('#video-skeleton'),
+    overlay:         $('#video-overlay'),
+    bigPlay:         $('#big-play-btn'),
+    ctrlPlay:        $('#ctrl-play'),
+    ctrlRewind:      $('#ctrl-rewind'),
+    ctrlSpeed:       $('#ctrl-speed'),
+    ctrlPip:         $('#ctrl-pip'),
+    ctrlFullscreen:  $('#ctrl-fullscreen'),
+    timeDisplay:     $('#time-display'),
+    seekCont:        $('#seek-bar-container'),
+    seekTrack:       $('#seek-bar-track'),
+    seekFilled:      $('#seek-bar-filled'),
+    seekBuffered:    $('#seek-bar-buffered'),
+    seekHandle:      $('#seek-bar-handle'),
+    controls:        $('#video-controls'),
+    bufferingOverlay:$('#buffering-overlay'),
+    tabBtns:         $$('.tab-btn'),
+    tabContents:     $$('.tab-content'),
+    transcriptList:  $('#transcript-list'),
+    transcriptSkel:  $('#transcript-skeleton'),
+    progressPct:     $('#progress-percent'),
+    progressFill:    $('#watch-progress-fill'),
+    totalDur:        $('#total-duration'),
+    clinicName:      $('#clinic-name'),
+    auditDate:       $('#audit-date'),
+    ctaBtn:          $('#cta-whatsapp-btn'),
+    panelCard:       $('#panel-card'),
+    pricingSection:  $('#pricing-section'),
+    pricingAnchor:   $('#pricing-anchor')
+  };
+
+  const state = {
+    playing:false, 
+    currentVid:'personal',
+    durPersonal:0, 
+    durMain:0, 
+    totalDur:0,
+    speedIdx:2, 
+    transcript:[], 
+    activeTranscriptIdx:-1,
+    seeking:false, 
+    maxWatched:0,
+    fullscreen:false, 
+    personalEnded:false,
+    introDuration: CONFIG.introDuration,
+    isMobile: window.innerWidth <= 768,
+    controlsVisible: true,
+    isSynced: false,
+    isBuffering: false
+  };
+
+  // Pre-load main video metadata
+  const mainEl = document.createElement('video');
+  mainEl.preload = 'metadata';
+  mainEl.src = CONFIG.videos.main;
+  mainEl.playsInline = true;
+
+  /* ------ Init ------ */
+  function init() {
+    applyConfig();
+    setupVideo();
+    setupControls();
+    setupTabs();
+    loadTranscript();
+    setupScrollReveal();
+    showCtrlsBriefly();
+    setupStickySidebar();
+    setupMobileControls();
+    setupFullscreenBlur();
+    setupBufferingEvents();
+    detectIntroDuration();
+    
+    // Update all WhatsApp links with custom messages
+    updateWhatsAppLinks();
+  }
+
+  function applyConfig() {
+    if (DOM.clinicName) DOM.clinicName.textContent = CONFIG.clinicName;
+    if (DOM.auditDate)  DOM.auditDate.textContent  = getIDDate();
+    document.title = `Audit Website – ${CONFIG.clinicName} | Fahril Creative – FAZMEN`;
+  }
+
+  function getIDDate() {
+    const M = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+    const d = new Date();
+    return `${d.getDate()} ${M[d.getMonth()]} ${d.getFullYear()}`;
+  }
+
+  /* ------ Update WhatsApp Links with Custom Messages ------ */
+  function updateWhatsAppLinks() {
+    // Update all pricing plan buttons
+    const planButtons = document.querySelectorAll('.plan-cta');
+    planButtons.forEach(btn => {
+      const href = btn.getAttribute('href');
+      if (href && href.includes('wa.me')) {
+        // Keep the existing custom message
+        // No changes needed as they already have custom messages
+      }
+    });
+    
+    // Update any other WhatsApp links that need custom messages
+    const allWaLinks = document.querySelectorAll('a[href*="wa.me"]');
+    allWaLinks.forEach(link => {
+      // Skip if it already has a message parameter
+      if (link.href.includes('?text=')) return;
+      
+      // Add default message if no custom message exists
+      if (link.id === 'cta-whatsapp-btn') {
+        // This is the main CTA button - no custom message
+        // Keep as is
+      }
+    });
+  }
+
+  /* ------ Detect Intro Duration ------ */
+  function detectIntroDuration() {
+    const v = DOM.video;
+    v.addEventListener('loadedmetadata', function detect() {
+      // Try to detect intro duration from video structure
+      // We'll use a default of 7 seconds if not specified
+      state.introDuration = CONFIG.introDuration;
+      v.removeEventListener('loadedmetadata', detect);
+    });
+  }
+
+  /* ------ Thumbnail ------ */
+  function setupThumbnail() {
+    const thumb = DOM.thumbnail;
+    if (!thumb) return;
+    
+    thumb.addEventListener('load', () => {
+      thumb.classList.remove('hidden');
+      DOM.skeleton.classList.add('hidden');
+    });
+    
+    thumb.addEventListener('error', () => {
+      thumb.classList.add('hidden');
+    });
+  }
+
+  /* ------ Sticky Sidebar Fix ------ */
+  function setupStickySidebar() {
+    if (window.innerWidth < 1025) return;
+
+    const panel = DOM.panelCard;
+    const anchor = DOM.pricingAnchor;
+    const headerHeight = 64;
+    const panelTopOffset = headerHeight + 16;
+
+    function updateSticky() {
+      if (!panel || !anchor) return;
+      
+      const anchorRect = anchor.getBoundingClientRect();
+      const panelHeight = panel.offsetHeight;
+      const panelBottom = panelTopOffset + panelHeight;
+      
+      if (anchorRect.top <= panelBottom) {
+        panel.style.position = 'relative';
+        panel.style.top = 'auto';
+        panel.style.alignSelf = 'start';
+      } else {
+        panel.style.position = 'sticky';
+        panel.style.top = panelTopOffset + 'px';
+        panel.style.alignSelf = 'start';
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.target === anchor) {
+          updateSticky();
+        }
+      });
+    }, {
+      rootMargin: '0px 0px 0px 0px',
+      threshold: [0, 0.1, 0.5, 1]
+    });
+
+    observer.observe(anchor);
+    window.addEventListener('scroll', updateSticky, { passive: true });
+    window.addEventListener('resize', updateSticky, { passive: true });
+    setTimeout(updateSticky, 100);
+  }
+
+  /* ------ Video ------ */
+  function setupVideo() {
+    const v = DOM.video;
+    
+    // Setup thumbnail
+    setupThumbnail();
+
+    v.addEventListener('loadedmetadata', () => {
+      if (state.currentVid === 'personal') { 
+        state.durPersonal = v.duration; 
+        recalcTotal(); 
+      }
+      hideSkeleton();
+    });
+    
+    mainEl.addEventListener('loadedmetadata', () => {
+      state.durMain = mainEl.duration; 
+      recalcTotal();
+    });
+
+    v.addEventListener('timeupdate', onTimeUpdate);
+    v.addEventListener('progress', updateBuffered);
+    v.addEventListener('ended', onEnded);
+    v.addEventListener('error', hideSkeleton);
+    v.addEventListener('play',  () => { 
+      state.playing = true;  
+      updatePlayIcon();
+      if (!DOM.thumbnail.classList.contains('hidden')) {
+        DOM.thumbnail.classList.add('hidden');
+      }
+      // Hide controls on mobile after play starts
+      if (state.isMobile) {
+        hideMobileControlsAfterDelay();
+      }
+    });
+    v.addEventListener('pause', () => { 
+      state.playing = false; 
+      updatePlayIcon(); 
+      // Show controls on mobile when paused
+      if (state.isMobile) {
+        showMobileControls();
+      }
+    });
+
+    v.addEventListener('click', togglePlay);
+    DOM.bigPlay.addEventListener('click', e => { 
+      e.stopPropagation(); 
+      togglePlay(); 
+    });
+    DOM.overlay.addEventListener('click', e => { 
+      if (e.target === DOM.overlay) togglePlay(); 
+    });
+  }
+
+  function recalcTotal() {
+    state.totalDur = state.durPersonal + state.durMain;
+    DOM.totalDur.textContent = fmt(state.totalDur);
+    updateTimeDisplay();
+  }
+
+  function hideSkeleton() { 
+    DOM.skeleton && DOM.skeleton.classList.add('hidden'); 
+  }
+
+  function togglePlay() {
+    const v = DOM.video;
+    if (v.paused || v.ended) {
+      v.play().catch(() => {});
+      DOM.overlay.classList.add('hidden');
+      if (!DOM.thumbnail.classList.contains('hidden')) {
+        DOM.thumbnail.classList.add('hidden');
+      }
+      // Hide controls on mobile after play
+      if (state.isMobile) {
+        hideMobileControlsAfterDelay();
+      }
+    } else { 
+      v.pause(); 
+      // Show controls on mobile when paused
+      if (state.isMobile) {
+        showMobileControls();
+      }
+    }
+  }
+
+  function updatePlayIcon() {
+    const pi = $('.icon-play', DOM.ctrlPlay), pa = $('.icon-pause', DOM.ctrlPlay);
+    if (pi) pi.style.display = state.playing ? 'none' : 'block';
+    if (pa) pa.style.display = state.playing ? 'block' : 'none';
+  }
+
+  function globalTime() {
+    if (state.currentVid === 'personal') {
+      return DOM.video.currentTime;
+    } else {
+      return state.durPersonal + DOM.video.currentTime;
+    }
+  }
+
+  function onTimeUpdate() {
+    if (state.seeking) return;
+    const g = globalTime();
+    if (g > state.maxWatched) state.maxWatched = g;
+    updateTimeDisplay(); 
+    updateSeekBar(); 
+    updateProgress(); 
+    syncTranscript(g);
+    syncVideos(g);
+  }
+
+  function syncVideos(globalTime) {
+    if (state.currentVid === 'personal') {
+      const mainVideo = DOM.video;
+      
+      if (globalTime >= state.introDuration && !state.isSynced) {
+        state.isSynced = true;
+        
+        if (!mainVideo.paused && state.currentVid === 'personal') {
+          mainVideo.classList.add('video-fading');
+          
+          setTimeout(() => {
+            state.currentVid = 'main';
+            state.personalEnded = true;
+            
+            const prevSrc = mainVideo.src;
+            mainVideo.src = CONFIG.videos.main;
+            mainVideo.load();
+            
+            mainVideo.addEventListener('canplay', function fn() {
+              mainVideo.removeEventListener('canplay', fn);
+              mainVideo.classList.remove('video-fading');
+              mainVideo.classList.add('video-fading-in');
+              mainVideo.currentTime = 0;
+              mainVideo.play().catch(() => {});
+              
+              setTimeout(() => {
+                mainVideo.classList.remove('video-fading-in');
+              }, 400);
+            });
+          }, 800);
+        }
+      }
+    }
+  }
+
+  function updateTimeDisplay() { 
+    DOM.timeDisplay.textContent = `${fmt(globalTime())} / ${fmt(state.totalDur)}`; 
+  }
+
+  function updateSeekBar() {
+    const pct = state.totalDur > 0 ? (globalTime() / state.totalDur) * 100 : 0;
+    DOM.seekFilled.style.width = pct + '%';
+    DOM.seekHandle.style.left  = pct + '%';
+  }
+
+  function updateBuffered() {
+    const v = DOM.video;
+    if (!v.buffered.length) return;
+    const end = v.buffered.end(v.buffered.length - 1);
+    const gEnd = state.currentVid === 'personal' ? end : state.durPersonal + end;
+    const pct = state.totalDur > 0 ? (gEnd / state.totalDur) * 100 : 0;
+    DOM.seekBuffered.style.width = Math.min(pct, 100) + '%';
+  }
+
+  function updateProgress() {
+    const pct = state.totalDur > 0 ? Math.min(Math.round((state.maxWatched / state.totalDur) * 100), 100) : 0;
+    DOM.progressPct.textContent  = pct + '%';
+    DOM.progressFill.style.width = pct + '%';
+  }
+
+  function onEnded() {
+    if (state.currentVid === 'personal' && !state.personalEnded) {
+      state.personalEnded = true;
+      state.currentVid = 'main';
+      const v = DOM.video;
+      v.classList.add('video-fading');
+      setTimeout(() => {
+        v.src = CONFIG.videos.main; 
+        v.load();
+        v.addEventListener('canplay', function fn() {
+          v.removeEventListener('canplay', fn);
+          v.classList.remove('video-fading');
+          v.classList.add('video-fading-in');
+          v.play().catch(() => DOM.overlay.classList.remove('hidden'));
+          setTimeout(() => v.classList.remove('video-fading-in'), 400);
+        });
+      }, 320);
+    }
+  }
+
+  function seekToGlobal(t) {
+    const v = DOM.video;
+    t = Math.max(0, Math.min(t, state.totalDur));
+    
+    if (t < state.introDuration) {
+      state.isSynced = false;
+    }
+    
+    if (t < state.durPersonal) {
+      if (state.currentVid !== 'personal') {
+        state.currentVid = 'personal'; 
+        state.personalEnded = false;
+        const wp = state.playing;
+        v.src = CONFIG.videos.personal; 
+        v.load();
+        v.addEventListener('loadeddata', function fn() {
+          v.removeEventListener('loadeddata', fn);
+          v.currentTime = t;
+          if (wp) v.play().catch(() => {});
+        });
+      } else { 
+        v.currentTime = t; 
+      }
+    } else {
+      const mt = t - state.durPersonal;
+      if (state.currentVid !== 'main') {
+        state.currentVid = 'main'; 
+        state.personalEnded = true;
+        const wp = state.playing;
+        v.src = CONFIG.videos.main; 
+        v.load();
+        v.addEventListener('loadeddata', function fn() {
+          v.removeEventListener('loadeddata', fn);
+          v.currentTime = mt;
+          if (wp) v.play().catch(() => {});
+        });
+      } else { 
+        v.currentTime = mt; 
+      }
+    }
+  }
+
+  function fmt(s) {
+    if (!s || isNaN(s)) return '0:00';
+    return `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
+  }
+
+  /* ------ Mobile Controls Auto-Hide ------ */
+  let mobileControlsTimeout = null;
+  
+  function hideMobileControlsAfterDelay() {
+    clearTimeout(mobileControlsTimeout);
+    if (state.playing) {
+      mobileControlsTimeout = setTimeout(() => {
+        if (state.playing) {
+          DOM.controls.classList.add('mobile-hidden');
+          DOM.overlay.classList.add('mobile-hidden');
+          state.controlsVisible = false;
+        }
+      }, 4000); // 4 detik setelah video mulai
+    }
+  }
+  
+  function showMobileControls() {
+    clearTimeout(mobileControlsTimeout);
+    DOM.controls.classList.remove('mobile-hidden');
+    DOM.overlay.classList.remove('mobile-hidden');
+    DOM.controls.classList.add('show');
+    state.controlsVisible = true;
+    
+    // If playing, re-hide after 4 seconds
+    if (state.playing) {
+      hideMobileControlsAfterDelay();
+    }
+  }
+
+  /* ------ Controls ------ */
+  function setupControls() {
+    DOM.ctrlPlay.addEventListener('click', togglePlay);
+    DOM.ctrlRewind.addEventListener('click', () => seekToGlobal(globalTime() - 10));
+    DOM.ctrlSpeed.addEventListener('click', cycleSpeed);
+    DOM.ctrlPip.addEventListener('click', togglePip);
+    DOM.ctrlFullscreen.addEventListener('click', toggleFullscreen);
+    setupSeekBar();
+    setupControlsVisibility();
+    document.addEventListener('keydown', handleKey);
+  }
+
+  function cycleSpeed() {
+    state.speedIdx = (state.speedIdx + 1) % CONFIG.speedOptions.length;
+    const sp = CONFIG.speedOptions[state.speedIdx];
+    DOM.video.playbackRate = sp;
+    DOM.ctrlSpeed.textContent = sp === 1 ? '1x' : sp + 'x';
+  }
+
+  function togglePip() {
+    if (document.pictureInPictureElement) document.exitPictureInPicture().catch(() => {});
+    else if (DOM.video.requestPictureInPicture) DOM.video.requestPictureInPicture().catch(() => {});
+  }
+
+  function toggleFullscreen() {
+    const c = DOM.videoContainer;
+    if (!document.fullscreenElement) {
+      c.requestFullscreen().catch(() => {}).then(() => { 
+        state.fullscreen = true; 
+        updateFSIcon();
+        updateFullscreenBackground();
+      }).catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  }
+  
+  document.addEventListener('fullscreenchange', () => {
+    state.fullscreen = !!document.fullscreenElement;
+    DOM.videoContainer.classList.toggle('fullscreen', state.fullscreen);
+    updateFSIcon();
+    if (state.fullscreen) {
+      updateFullscreenBackground();
+    }
+  });
+  
+  function updateFSIcon() {
+    const ex = $('.icon-expand', DOM.ctrlFullscreen), co = $('.icon-compress', DOM.ctrlFullscreen);
+    if (ex) ex.style.display = state.fullscreen ? 'none' : 'block';
+    if (co) co.style.display = state.fullscreen ? 'block' : 'none';
+  }
+
+  function updateFullscreenBackground() {
+    const v = DOM.video;
+    const blur = DOM.blurBackground;
+    if (!blur) return;
+    
+    const canvas = document.createElement('canvas');
+    canvas.width = v.videoWidth || 1920;
+    canvas.height = v.videoHeight || 1080;
+    const ctx = canvas.getContext('2d');
+    try {
+      ctx.drawImage(v, 0, 0, canvas.width, canvas.height);
+      blur.style.backgroundImage = `url(${canvas.toDataURL()})`;
+    } catch (e) {
+      if (DOM.thumbnail && !DOM.thumbnail.classList.contains('hidden')) {
+        blur.style.backgroundImage = `url(${DOM.thumbnail.src})`;
+      }
+    }
+  }
+
+  function setupFullscreenBlur() {
+    setInterval(() => {
+      if (state.fullscreen && !DOM.video.paused) {
+        updateFullscreenBackground();
+      }
+    }, 1000);
+  }
+
+  function setupSeekBar() {
+    let dragging = false;
+    function pct(e) {
+      const r = DOM.seekCont.getBoundingClientRect();
+      const cx = e.touches ? e.touches[0].clientX : e.clientX;
+      return Math.max(0, Math.min(1, (cx - r.left) / r.width));
+    }
+    function startSeek(e) { 
+      dragging = true; 
+      state.seeking = true; 
+      move(e); 
+    }
+    function move(e) {
+      if (!dragging) return;
+      if (e.cancelable) e.preventDefault();
+      const p = pct(e) * 100;
+      DOM.seekFilled.style.width = p + '%';
+      DOM.seekHandle.style.left  = p + '%';
+      DOM.timeDisplay.textContent = `${fmt((p/100)*state.totalDur)} / ${fmt(state.totalDur)}`;
+    }
+    function endSeek(e) {
+      if (!dragging) return;
+      dragging = false; 
+      state.seeking = false;
+      move(e);
+      seekToGlobal((parseFloat(DOM.seekFilled.style.width)/100) * state.totalDur);
+    }
+    DOM.seekCont.addEventListener('mousedown', startSeek);
+    document.addEventListener('mousemove', move);
+    document.addEventListener('mouseup', endSeek);
+    DOM.seekCont.addEventListener('touchstart', startSeek, {passive:true});
+    document.addEventListener('touchmove', move, {passive:false});
+    document.addEventListener('touchend', endSeek);
+  }
+
+  function setupControlsVisibility() {
+    let t;
+    const wrap = DOM.videoWrapper, ctrls = DOM.controls;
+    function show() {
+      if (state.isMobile) {
+        showMobileControls();
+        return;
+      }
+      ctrls.classList.add('show');
+      clearTimeout(t);
+      t = setTimeout(() => { 
+        if (state.playing && !state.isMobile) {
+          ctrls.classList.remove('show'); 
+        }
+      }, 3000);
+    }
+    wrap.addEventListener('mousemove', show);
+    wrap.addEventListener('mouseenter', show);
+    wrap.addEventListener('mouseleave', () => {
+      if (state.playing && !state.isMobile) { 
+        clearTimeout(t); 
+        t = setTimeout(() => ctrls.classList.remove('show'), 800); 
+      }
+    });
+    wrap.addEventListener('touchstart', show, {passive:true});
+  }
+
+  function showCtrlsBriefly() {
+    DOM.controls.classList.add('show');
+    setTimeout(() => DOM.controls.classList.remove('show'), 3000);
+  }
+
+  function handleKey(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    switch(e.key) {
+      case ' ': case 'k': e.preventDefault(); togglePlay(); break;
+      case 'ArrowLeft':   e.preventDefault(); seekToGlobal(globalTime()-5); break;
+      case 'ArrowRight':  e.preventDefault(); seekToGlobal(globalTime()+5); break;
+      case 'f':           e.preventDefault(); toggleFullscreen(); break;
+      case 'm':           e.preventDefault(); DOM.video.muted = !DOM.video.muted; break;
+    }
+  }
+
+  /* ------ Mobile Controls Hide/Show ------ */
+  function setupMobileControls() {
+    if (!state.isMobile) return;
+    
+    const wrapper = DOM.videoWrapper;
+    const controls = DOM.controls;
+    const overlay = DOM.overlay;
+    let tapCount = 0;
+    let tapTimer = null;
+    
+    wrapper.addEventListener('click', (e) => {
+      if (e.target.closest('.video-controls') || e.target.closest('.video-overlay')) return;
+      
+      tapCount++;
+      
+      if (tapTimer) {
+        clearTimeout(tapTimer);
+        tapTimer = null;
+      }
+      
+      if (tapCount === 1) {
+        tapTimer = setTimeout(() => {
+          // Toggle controls visibility
+          if (state.controlsVisible) {
+            DOM.controls.classList.add('mobile-hidden');
+            DOM.overlay.classList.add('mobile-hidden');
+            DOM.controls.classList.remove('show');
+            state.controlsVisible = false;
+          } else {
+            DOM.controls.classList.remove('mobile-hidden');
+            DOM.overlay.classList.remove('mobile-hidden');
+            DOM.controls.classList.add('show');
+            state.controlsVisible = true;
+            if (state.playing) {
+              hideMobileControlsAfterDelay();
+            }
+          }
+          tapCount = 0;
+        }, 300);
+      } else if (tapCount === 2) {
+        clearTimeout(tapTimer);
+        tapTimer = null;
+        togglePlay();
+        tapCount = 0;
+      }
+    });
+  }
+
+  /* ------ Buffering Animation ------ */
+  function setupBufferingEvents() {
+    const v = DOM.video;
+    const buffering = DOM.bufferingOverlay;
+    let bufferingTimeout;
+    
+    function showBuffering() {
+      if (!state.isBuffering) {
+        state.isBuffering = true;
+        buffering.classList.add('active');
+      }
+      clearTimeout(bufferingTimeout);
+    }
+    
+    function hideBuffering() {
+      state.isBuffering = false;
+      buffering.classList.remove('active');
+      clearTimeout(bufferingTimeout);
+    }
+    
+    v.addEventListener('waiting', showBuffering);
+    v.addEventListener('stalled', showBuffering);
+    v.addEventListener('seeking', showBuffering);
+    
+    v.addEventListener('canplay', () => {
+      bufferingTimeout = setTimeout(hideBuffering, 100);
+    });
+    
+    v.addEventListener('playing', () => {
+      bufferingTimeout = setTimeout(hideBuffering, 200);
+    });
+    
+    v.addEventListener('canplaythrough', hideBuffering);
+    
+    v.addEventListener('loadstart', showBuffering);
+    v.addEventListener('loadeddata', () => {
+      bufferingTimeout = setTimeout(hideBuffering, 300);
+    });
+  }
+
+  /* ------ Tabs ------ */
+  function setupTabs() {
+    DOM.tabBtns.forEach(btn => btn.addEventListener('click', () => activateTab(btn.dataset.tab)));
+  }
+  
+  function activateTab(name) {
+    DOM.tabBtns.forEach(b => { 
+      const a = b.dataset.tab===name; 
+      b.classList.toggle('active',a); 
+      b.setAttribute('aria-selected',a); 
+    });
+    DOM.tabContents.forEach(c => c.classList.toggle('active', c.id===`tab-${name}`));
+  }
+
+  /* ------ Transcript ------ */
+  function loadTranscript() {
+    const paths = [
+      CONFIG.transcriptPath,
+      'transcript.json',
+      '../transcripts/transcript.json'
+    ];
+    
+    let attempts = 0;
+    
+    function tryLoad() {
+      if (attempts >= paths.length) {
+        renderFallback();
+        return;
+      }
+      
+      const path = paths[attempts];
+      attempts++;
+      
+      fetch(path)
+        .then(r => { 
+          if (!r.ok) throw new Error(`HTTP ${r.status}`); 
+          return r.json(); 
+        })
+        .then(renderTranscript)
+        .catch(() => {
+          tryLoad();
+        });
+    }
+    
+    tryLoad();
+  }
+
+  function renderTranscript(entries) {
+    DOM.transcriptSkel && DOM.transcriptSkel.remove();
+    const frag = document.createDocumentFragment();
+    
+    if (!Array.isArray(entries)) {
+      renderFallback();
+      return;
+    }
+    
+    entries.forEach((e, i) => {
+      if (!e.start || !e.text) return;
+      
+      const el = document.createElement('div');
+      el.className = 'transcript-entry';
+      el.setAttribute('data-index', i);
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      
+      const end = e.end || e.start + 3;
+      el.innerHTML = `<div class="transcript-time">${fmt(e.start)}</div><div class="transcript-text">${esc(e.text)}</div>`;
+      
+      const jump = () => { 
+        seekToGlobal(e.start); 
+        if (DOM.video.paused) setTimeout(togglePlay, 180); 
+      };
+      
+      el.addEventListener('click', jump);
+      el.addEventListener('keydown', ev => { 
+        if (ev.key==='Enter'||ev.key===' ') { 
+          ev.preventDefault(); 
+          jump(); 
+        } 
+      });
+      
+      el.dataset.start = e.start;
+      el.dataset.end = end;
+      
+      frag.appendChild(el);
+    });
+    
+    state.transcript = entries;
+    DOM.transcriptList.appendChild(frag);
+  }
+
+  function renderFallback() {
+    DOM.transcriptSkel && DOM.transcriptSkel.remove();
+    DOM.transcriptList.innerHTML = `
+      <div style="padding:18px;text-align:center;color:#94a3b8;font-size:13px;">
+        Transcript belum tersedia.
+      </div>
+    `;
+  }
+
+  function syncTranscript(gt) {
+    const entries = state.transcript;
+    if (!entries || !entries.length) return;
+    
+    let ai = -1;
+    for (let i = 0; i < entries.length; i++) {
+      const start = entries[i].start || 0;
+      const end = entries[i].end || start + 3;
+      if (gt >= start && gt < end) { 
+        ai = i; 
+        break; 
+      }
+    }
+    
+    if (ai !== state.activeTranscriptIdx) {
+      state.activeTranscriptIdx = ai;
+      DOM.transcriptList.querySelectorAll('.transcript-entry').forEach((el, i) => {
+        el.classList.toggle('active', i === ai);
+        if (i === ai) {
+          el.scrollIntoView({block:'nearest', behavior:'smooth'});
+        }
+      });
+    }
+  }
+
+  function esc(t) { 
+    const d = document.createElement('div'); 
+    d.textContent = t; 
+    return d.innerHTML; 
+  }
+
+  /* ------ Scroll reveal ------ */
+  function setupScrollReveal() {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { 
+        if (e.isIntersecting) e.target.classList.add('visible'); 
+      });
+    }, {threshold:.08, rootMargin:'0px 0px -32px 0px'});
+    document.querySelectorAll('.scroll-reveal').forEach(el => obs.observe(el));
+  }
+
+  /* ------ Boot ------ */
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+
+})();
+</script>
+
 </body>
 </html>
